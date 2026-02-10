@@ -1,0 +1,138 @@
+{
+  "identity": {
+    "name": "ANITA | Art of Beauty",
+    "persona": "E1 - The Anti-AI Designer",
+    "tone": "Editorial, Luxurious, Intimate, Sophisticated",
+    "target_audience": "Women 20-55, Mosonmagyaróvár, seeking premium beauty services"
+  },
+  "typography": {
+    "primary_font": "Playfair Display",
+    "secondary_font": "Mulish",
+    "font_weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "bold": 700
+    },
+    "usage": {
+      "h1": "font-serif text-5xl md:text-7xl tracking-tight leading-none",
+      "h2": "font-serif text-4xl md:text-5xl tracking-tight mb-8",
+      "h3": "font-serif text-2xl md:text-3xl mb-4",
+      "body": "font-sans text-base md:text-lg leading-relaxed text-muted-foreground",
+      "label": "font-sans text-xs uppercase tracking-[0.2em] text-primary font-bold"
+    }
+  },
+  "colors": {
+    "palette": {
+      "background": "#F9F7F2",
+      "foreground": "#1A1A1A",
+      "primary": "#D4AF37",
+      "secondary": "#E6DCCF",
+      "muted": "#F2EBE0",
+      "accent": "#1A1A1A",
+      "border": "#E6DCCF"
+    },
+    "usage": {
+      "bg_main": "bg-[#F9F7F2]",
+      "text_main": "text-[#1A1A1A]",
+      "text_muted": "text-[#5A5A5A]",
+      "accent_gold": "text-[#D4AF37]",
+      "border_subtle": "border-[#E6DCCF]"
+    }
+  },
+  "layout_strategy": {
+    "container": "max-w-7xl mx-auto px-6 md:px-12",
+    "spacing": {
+      "section_gap": "py-24 md:py-32",
+      "element_gap": "gap-8 md:gap-12"
+    },
+    "grid_system": "Bento Grid (Asymmetric)",
+    "modes": {
+      "hero": "Full-screen parallax with overlay text",
+      "services": "Asymmetric grid (Bento) - mixing large images with price lists",
+      "about": "Split screen editorial - Text left, Image right (sticky)",
+      "contact": "Split screen - Map/Info left, Form right"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#1A1A1A] text-white hover:bg-[#D4AF37] rounded-none px-8 py-4 uppercase tracking-widest text-xs transition-all duration-300",
+      "secondary": "bg-transparent border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white rounded-none px-8 py-4 uppercase tracking-widest text-xs transition-all duration-300"
+    },
+    "cards": {
+      "service": "bg-white p-8 border border-[#E6DCCF] hover:border-[#D4AF37] transition-all duration-500 group relative overflow-hidden",
+      "price_item": "flex justify-between items-baseline border-b border-dashed border-[#E6DCCF] pb-2 mb-4"
+    },
+    "form": {
+      "input": "bg-transparent border-b border-[#1A1A1A] rounded-none px-0 py-4 focus:border-[#D4AF37] focus:ring-0 placeholder:text-[#1A1A1A]/50",
+      "label": "uppercase text-xs tracking-widest mb-2 block"
+    }
+  },
+  "visual_enhancers": {
+    "textures": "Subtle grain overlay on background",
+    "decorations": "Gold foil lines, abstract geometric shapes in background",
+    "animations": {
+      "scroll": "Parallax effect on images",
+      "hover": "Slow zoom on images, color shift on borders",
+      "entrance": "Staggered fade-up for text"
+    }
+  },
+  "image_assets": {
+    "hero_bg": "https://images.unsplash.com/photo-1633465631144-aa321b66d44a",
+    "services": {
+      "makeup": "https://images.unsplash.com/photo-1692856184951-8e06bba6b4b5",
+      "brows": "https://images.unsplash.com/photo-1521146764736-56c929d59c83",
+      "facial": "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea",
+      "lashes": "https://images.unsplash.com/photo-1652201767864-49472c48b145"
+    },
+    "interior": "https://images.unsplash.com/photo-1601002257790-ebe0966a85ae",
+    "texture": "https://images.unsplash.com/photo-1761437856311-3ba13025f161"
+  },
+  "content_data": {
+    "contact_info": {
+      "phone": "+36309223271",
+      "email": "anitabrattengeier@gmail.com",
+      "address": "9200 Mosonmagyaróvár, Fő u 17",
+      "instagram": "@brattengeieranita",
+      "facebook": "@AnitaLashandMakeUpMovar"
+    },
+    "services_list": [
+      "Szempilla építés (1D-6D)",
+      "Szemöldök styling (Laminálás, Festés)",
+      "Smink (Nappali, Alkalmi, Menyasszonyi)",
+      "Arckezelések (Masszázs, Tisztítás)",
+      "Waposon kezelés",
+      "Kombinált csomagok"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Use 'Playfair Display' for all headings to achieve the editorial look.",
+    "Implement a smooth scroll behavior (Lenis recommended if possible, otherwise CSS scroll-behavior: smooth).",
+    "Ensure generous whitespace (py-24 or py-32) between sections.",
+    "Do not use standard card shadows. Use borders and subtle hover states.",
+    "The 'Gold' color (#D4AF37) should be used sparingly as an accent (lines, buttons, active states), not as a main background.",
+    "Images must be treated as art pieces - use aspect-ratio-square or aspect-ratio-[3/4] with object-cover.",
+    "For the 'Services' section, avoid a simple list. Use a grid where some cells are images and others are price lists.",
+    "Contact form should feel like a personal letter, not a data entry point."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use sonner for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx"
+  ]
+}
