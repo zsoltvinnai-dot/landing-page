@@ -18,80 +18,80 @@ const servicesData = {
     title: "Szempilla Építés",
     image: "https://images.unsplash.com/photo-1652201767864-49472c48b145?w=800&q=80",
     items: [
-      { name: "Klasszikus Szempilla Építés", duration: "90 perc", price: "12.000 Ft" },
-      { name: "Volume Szempilla Építés", duration: "120 perc", price: "15.000 Ft" },
-      { name: "Hybrid Szempilla Építés", duration: "120 perc", price: "14.000 Ft" },
-      { name: "Szempilla Kiegészítés", duration: "45 perc", price: "6.000 Ft" },
-      { name: "Szempilla Eltávolítás", duration: "30 perc", price: "3.000 Ft" },
-      { name: "Karbantartás (3 hét)", duration: "60 perc", price: "8.000 Ft" },
-      { name: "Karbantartás (4-5 hét)", duration: "90 perc", price: "10.000 Ft" },
-    ]
+    { name: "Klasszikus Szempilla Építés", duration: "90 perc", price: "12.000 Ft" },
+    { name: "Volume Szempilla Építés", duration: "120 perc", price: "15.000 Ft" },
+    { name: "Hybrid Szempilla Építés", duration: "120 perc", price: "14.000 Ft" },
+    { name: "Szempilla Kiegészítés", duration: "45 perc", price: "6.000 Ft" },
+    { name: "Szempilla Eltávolítás", duration: "30 perc", price: "3.000 Ft" },
+    { name: "Karbantartás (3 hét)", duration: "60 perc", price: "8.000 Ft" },
+    { name: "Karbantartás (4-5 hét)", duration: "90 perc", price: "10.000 Ft" }]
+
   },
   szemoldok: {
     title: "Szemöldök Kezelések",
     image: "https://images.unsplash.com/photo-1521146764736-56c929d59c83?w=800&q=80",
     items: [
-      { name: "Szemöldök Építés (Microblading Hatás)", duration: "60 perc", price: "8.000 Ft" },
-      { name: "Szemöldök Festés", duration: "30 perc", price: "3.000 Ft" },
-      { name: "Szemöldök Formázás + Festés", duration: "45 perc", price: "5.000 Ft" },
-      { name: "Szemöldök Kiegészítés", duration: "30 perc", price: "4.000 Ft" },
-    ]
+    { name: "Szemöldök Építés (Microblading Hatás)", duration: "60 perc", price: "8.000 Ft" },
+    { name: "Szemöldök Festés", duration: "30 perc", price: "3.000 Ft" },
+    { name: "Szemöldök Formázás + Festés", duration: "45 perc", price: "5.000 Ft" },
+    { name: "Szemöldök Kiegészítés", duration: "30 perc", price: "4.000 Ft" }]
+
   },
   smink: {
     title: "Smink Szolgáltatások",
     image: "https://images.unsplash.com/photo-1692856184951-8e06bba6b4b5?w=800&q=80",
     items: [
-      { name: "Napi Smink", duration: "45 perc", price: "8.000 Ft" },
-      { name: "Esti Smink", duration: "60 perc", price: "12.000 Ft" },
-      { name: "Bridal Smink", duration: "90 perc", price: "18.000 Ft" },
-      { name: "Bridal Smink + Próba", duration: "120 perc", price: "22.000 Ft" },
-      { name: "Smink Korrekció", duration: "30 perc", price: "5.000 Ft" },
-      { name: "Smink Oktatás (1 óra)", duration: "60 perc", price: "10.000 Ft" },
-      { name: "Smink Oktatás (2 óra)", duration: "120 perc", price: "18.000 Ft" },
-    ]
+    { name: "Napi Smink", duration: "45 perc", price: "8.000 Ft" },
+    { name: "Esti Smink", duration: "60 perc", price: "12.000 Ft" },
+    { name: "Bridal Smink", duration: "90 perc", price: "18.000 Ft" },
+    { name: "Bridal Smink + Próba", duration: "120 perc", price: "22.000 Ft" },
+    { name: "Smink Korrekció", duration: "30 perc", price: "5.000 Ft" },
+    { name: "Smink Oktatás (1 óra)", duration: "60 perc", price: "10.000 Ft" },
+    { name: "Smink Oktatás (2 óra)", duration: "120 perc", price: "18.000 Ft" }]
+
   },
   arckezeles: {
     title: "Arckezelések",
     image: "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=800&q=80",
     items: [
-      { name: "Hidrodermabrasio + Arcmaszk", duration: "45 perc", price: "12.000 Ft" },
-      { name: "Spray Kezelés + Arcmaszk", duration: "45 perc", price: "11.000 Ft" },
-      { name: "Ultrahang Arckezelés", duration: "45 perc", price: "13.000 Ft" },
-      { name: "RF Arckezelés (Ránctalanítás)", duration: "45 perc", price: "15.000 Ft" },
-      { name: "Hidegkalapács Kezelés", duration: "30 perc", price: "8.000 Ft" },
-      { name: "Komplex Arckezelés", duration: "75 perc", price: "24.000 Ft" },
-      { name: "Premium Arckezelés", duration: "90 perc", price: "32.000 Ft" },
-    ]
+    { name: "Hidrodermabrasio + Arcmaszk", duration: "45 perc", price: "12.000 Ft" },
+    { name: "Spray Kezelés + Arcmaszk", duration: "45 perc", price: "11.000 Ft" },
+    { name: "Ultrahang Arckezelés", duration: "45 perc", price: "13.000 Ft" },
+    { name: "RF Arckezelés (Ránctalanítás)", duration: "45 perc", price: "15.000 Ft" },
+    { name: "Hidegkalapács Kezelés", duration: "30 perc", price: "8.000 Ft" },
+    { name: "Komplex Arckezelés", duration: "75 perc", price: "24.000 Ft" },
+    { name: "Premium Arckezelés", duration: "90 perc", price: "32.000 Ft" }]
+
   },
   waposon: {
     title: "Waposon Kezelések",
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
     items: [
-      { name: "Waposon Arckezelés", duration: "45 perc", price: "14.000 Ft" },
-      { name: "Waposon + Arcmaszk", duration: "60 perc", price: "18.000 Ft" },
-      { name: "Waposon + Hidrodermabrasio", duration: "60 perc", price: "20.000 Ft" },
-    ]
+    { name: "Waposon Arckezelés", duration: "45 perc", price: "14.000 Ft" },
+    { name: "Waposon + Arcmaszk", duration: "60 perc", price: "18.000 Ft" },
+    { name: "Waposon + Hidrodermabrasio", duration: "60 perc", price: "20.000 Ft" }]
+
   },
   csomagok: {
     title: "Kombinált Csomagok",
     image: "https://images.unsplash.com/photo-1601002257790-ebe0966a85ae?w=800&q=80",
     items: [
-      { name: "\"Lash & Makeup\" Csomag", duration: "150 perc", price: "25.000 Ft" },
-      { name: "\"Art of Beauty\" Csomag", duration: "180 perc", price: "38.000 Ft" },
-      { name: "\"Bridal Beauty\" Csomag", duration: "210 perc", price: "52.000 Ft" },
-      { name: "\"Express Beauty\" Csomag", duration: "90 perc", price: "14.000 Ft" },
-      { name: "\"Lash & Brow Art\" Csomag", duration: "120 perc", price: "18.000 Ft" },
-      { name: "Arcfiatalítás Sorozat (4 kezelés)", duration: "4x90 perc", price: "120.000 Ft" },
-    ]
+    { name: "\"Lash & Makeup\" Csomag", duration: "150 perc", price: "25.000 Ft" },
+    { name: "\"Art of Beauty\" Csomag", duration: "180 perc", price: "38.000 Ft" },
+    { name: "\"Bridal Beauty\" Csomag", duration: "210 perc", price: "52.000 Ft" },
+    { name: "\"Express Beauty\" Csomag", duration: "90 perc", price: "14.000 Ft" },
+    { name: "\"Lash & Brow Art\" Csomag", duration: "120 perc", price: "18.000 Ft" },
+    { name: "Arcfiatalítás Sorozat (4 kezelés)", duration: "4x90 perc", price: "120.000 Ft" }]
+
   }
 };
 
 const loyaltyLevels = [
-  { name: "Bronz", condition: "5+ kezelés", discount: "5%" },
-  { name: "Ezüst", condition: "10+ kezelés", discount: "10%" },
-  { name: "Arany", condition: "20+ kezelés", discount: "15%" },
-  { name: "Platina", condition: "30+ kezelés", discount: "20%" },
-];
+{ name: "Bronz", condition: "5+ kezelés", discount: "5%" },
+{ name: "Ezüst", condition: "10+ kezelés", discount: "10%" },
+{ name: "Arany", condition: "20+ kezelés", discount: "15%" },
+{ name: "Platina", condition: "30+ kezelés", discount: "20%" }];
+
 
 // Navigation Component
 const Navigation = () => {
@@ -107,37 +107,37 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { href: "#szolgaltatasok", label: "Szolgáltatások" },
-    { href: "#rolam", label: "Rólam" },
-    { href: "#husegprogram", label: "Hűségprogram" },
-    { href: "#kapcsolat", label: "Kapcsolat" },
-  ];
+  { href: "#szolgaltatasok", label: "Szolgáltatások" },
+  { href: "#rolam", label: "Rólam" },
+  { href: "#husegprogram", label: "Hűségprogram" },
+  { href: "#kapcsolat", label: "Kapcsolat" }];
+
 
   return (
     <nav
       data-testid="main-navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-[#F9F7F2]/95 backdrop-blur-sm shadow-sm" : "bg-transparent"
-      }`}
-    >
+      scrolled ? "bg-[#F9F7F2]/95 backdrop-blur-sm shadow-sm" : "bg-transparent"}`
+      }>
+
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
-          <a href="#" className="font-serif text-xl md:text-2xl tracking-tight" data-testid="logo">
-            ANITA <span className="text-gold">|</span> Art of Beauty
+          <a href="#" className="md:text-2xl font-serif text-xl tracking-tight !text-[#D4AF37]" data-testid="logo">ANITA 
+            <span className="text-gold">|</span> Art of Beauty
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="nav-link font-sans text-charcoal hover:text-gold"
-                data-testid={`nav-${link.label.toLowerCase()}`}
-              >
+            {navLinks.map((link) =>
+            <a
+              key={link.href}
+              href={link.href}
+              className="nav-link font-sans text-charcoal hover:text-gold"
+              data-testid={`nav-${link.label.toLowerCase()}`}>
+
                 {link.label}
               </a>
-            ))}
+            )}
             <a href="tel:+36309223271" className="btn-primary" data-testid="nav-cta">
               Időpont
             </a>
@@ -147,35 +147,35 @@ const Navigation = () => {
           <button
             className="md:hidden p-2"
             onClick={() => setIsOpen(!isOpen)}
-            data-testid="mobile-menu-toggle"
-          >
+            data-testid="mobile-menu-toggle">
+
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden absolute top-20 left-0 right-0 bg-[#F9F7F2] border-t border-beige py-6 px-6 animate-fade-in" data-testid="mobile-menu">
+        {isOpen &&
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-[#F9F7F2] border-t border-beige py-6 px-6 animate-fade-in" data-testid="mobile-menu">
             <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="font-sans text-sm uppercase tracking-widest text-charcoal hover:text-gold"
-                  onClick={() => setIsOpen(false)}
-                >
+              {navLinks.map((link) =>
+            <a
+              key={link.href}
+              href={link.href}
+              className="font-sans text-sm uppercase tracking-widest text-charcoal hover:text-gold"
+              onClick={() => setIsOpen(false)}>
+
                   {link.label}
                 </a>
-              ))}
+            )}
               <a href="tel:+36309223271" className="btn-primary text-center mt-4">
                 Időpont Foglalás
               </a>
             </div>
           </div>
-        )}
+        }
       </div>
-    </nav>
-  );
+    </nav>);
+
 };
 
 // Hero Section
@@ -185,22 +185,22 @@ const HeroSection = () => {
       <div
         className="hero-bg"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1633465631144-aa321b66d44a?w=1920&q=80')`,
-        }}
-      />
+          backgroundImage: `url('https://images.unsplash.com/photo-1633465631144-aa321b66d44a?w=1920&q=80')`
+        }} />
+
       <div className="hero-overlay" />
       <div className="grain-overlay absolute inset-0" />
 
       <div className="relative z-10 min-h-screen flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-12">
-        <div className="max-w-4xl">
-          <span className="editorial-label opacity-0 animate-fade-in-up" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+        <div className="max-w-4xl !bg-[rgba(0,0,0,0.01)]">
+          <span className="editorial-label animate-fade-in-up opacity-0 !text-[#000000]" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
             Mosonmagyaróvár
           </span>
           <h1 className="editorial-h1 mt-4 mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
             A szépség <br />
             <span className="italic">művészete</span>
           </h1>
-          <p className="editorial-body max-w-xl mb-8 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
+          <p className="editorial-body max-w-xl animate-fade-in-up mb-8 opacity-0 !text-[#000000]" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
             Professzionális szempilla építés, sminkelés és arckezelések prémium
             minőségben. Fedezd fel a természetes szépséged Anita Art of Beauty
             szalonban.
@@ -217,8 +217,8 @@ const HeroSection = () => {
 
         <div className="scroll-indicator hidden md:block" />
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 // Services Section with Tabs
@@ -233,7 +233,7 @@ const ServicesSection = () => {
           <span className="editorial-label">Szolgáltatások</span>
           <div className="flex items-end justify-between mt-4">
             <h2 className="editorial-h2">
-              Árlista <span className="italic">&</span> Kezelések
+              Árlista <span className="italic">és</span> Kezelések
             </h2>
             <div className="gold-line hidden md:block" />
           </div>
@@ -242,39 +242,39 @@ const ServicesSection = () => {
         {/* Services Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="w-full flex flex-wrap justify-start gap-2 md:gap-6 bg-transparent mb-12 h-auto" data-testid="services-tabs">
-            {Object.entries(servicesData).map(([key, data]) => (
-              <TabsTrigger
-                key={key}
-                value={key}
-                className={`service-tab px-4 py-2 text-xs uppercase tracking-widest bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none ${
-                  activeTab === key ? "active text-gold" : "text-charcoal"
-                }`}
-                data-testid={`tab-${key}`}
-              >
+            {Object.entries(servicesData).map(([key, data]) =>
+            <TabsTrigger
+              key={key}
+              value={key}
+              className={`service-tab px-4 py-2 text-xs uppercase tracking-widest bg-transparent data-[state=active]:bg-transparent data-[state=active]:shadow-none ${
+              activeTab === key ? "active text-gold" : "text-charcoal"}`
+              }
+              data-testid={`tab-${key}`}>
+
                 {data.title.split(" ")[0]}
               </TabsTrigger>
-            ))}
+            )}
           </TabsList>
 
-          {Object.entries(servicesData).map(([key, data]) => (
-            <TabsContent key={key} value={key} className="mt-0">
+          {Object.entries(servicesData).map(([key, data]) =>
+          <TabsContent key={key} value={key} className="mt-0">
               <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
                 {/* Image */}
                 <div className="img-zoom aspect-[3/4] md:aspect-square lg:aspect-[3/4]">
                   <img
-                    src={data.image}
-                    alt={data.title}
-                    className="w-full h-full object-cover"
-                    data-testid={`service-image-${key}`}
-                  />
+                  src={data.image}
+                  alt={data.title}
+                  className="w-full h-full object-cover"
+                  data-testid={`service-image-${key}`} />
+
                 </div>
 
                 {/* Price List */}
                 <div className="flex flex-col justify-center">
                   <h3 className="editorial-h3 mb-8">{data.title}</h3>
                   <div className="space-y-1">
-                    {data.items.map((item, idx) => (
-                      <div key={idx} className="price-row group" data-testid={`price-item-${key}-${idx}`}>
+                    {data.items.map((item, idx) =>
+                  <div key={idx} className="price-row group" data-testid={`price-item-${key}-${idx}`}>
                         <div className="flex-1">
                           <span className="font-sans text-sm md:text-base text-charcoal group-hover:text-gold transition-colors duration-300">
                             {item.name}
@@ -287,16 +287,16 @@ const ServicesSection = () => {
                           {item.price}
                         </span>
                       </div>
-                    ))}
+                  )}
                   </div>
                 </div>
               </div>
             </TabsContent>
-          ))}
+          )}
         </Tabs>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 // About Section
@@ -370,14 +370,14 @@ const AboutSection = () => {
                 src="https://images.unsplash.com/photo-1601002257790-ebe0966a85ae?w=800&q=80"
                 alt="Anita Art of Beauty szalon"
                 className="w-full h-full object-cover"
-                data-testid="about-image"
-              />
+                data-testid="about-image" />
+
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 // Loyalty Section
@@ -397,17 +397,17 @@ const LoyaltySection = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {loyaltyLevels.map((level, idx) => (
-            <div
-              key={idx}
-              className="loyalty-badge bg-white/5 border-white/10 hover:border-gold"
-              data-testid={`loyalty-${level.name.toLowerCase()}`}
-            >
+          {loyaltyLevels.map((level, idx) =>
+          <div
+            key={idx}
+            className="loyalty-badge bg-white/5 border-white/10 hover:border-gold"
+            data-testid={`loyalty-${level.name.toLowerCase()}`}>
+
               <span className="text-gold text-4xl md:text-5xl font-serif">{level.discount}</span>
               <h3 className="font-serif text-xl mt-4 mb-2">{level.name}</h3>
               <p className="text-sm text-white/50">{level.condition}</p>
             </div>
-          ))}
+          )}
         </div>
 
         <div className="mt-16 p-8 bg-gold/10 border border-gold/30 text-center">
@@ -417,8 +417,8 @@ const LoyaltySection = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 // Contact Section
@@ -427,7 +427,7 @@ const ContactSection = () => {
     name: "",
     email: "",
     phone: "",
-    message: "",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -471,8 +471,8 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 group"
-                data-testid="contact-address"
-              >
+                data-testid="contact-address">
+
                 <MapPin className="text-gold mt-1 flex-shrink-0" size={20} />
                 <div>
                   <span className="font-sans font-bold text-sm uppercase tracking-wide block mb-1">Cím</span>
@@ -485,8 +485,8 @@ const ContactSection = () => {
               <a
                 href="tel:+36309223271"
                 className="flex items-start gap-4 group"
-                data-testid="contact-phone"
-              >
+                data-testid="contact-phone">
+
                 <Phone className="text-gold mt-1 flex-shrink-0" size={20} />
                 <div>
                   <span className="font-sans font-bold text-sm uppercase tracking-wide block mb-1">Telefon</span>
@@ -499,8 +499,8 @@ const ContactSection = () => {
               <a
                 href="mailto:anitabrattengeier@gmail.com"
                 className="flex items-start gap-4 group"
-                data-testid="contact-email"
-              >
+                data-testid="contact-email">
+
                 <Mail className="text-gold mt-1 flex-shrink-0" size={20} />
                 <div>
                   <span className="font-sans font-bold text-sm uppercase tracking-wide block mb-1">Email</span>
@@ -518,8 +518,8 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
-                data-testid="social-instagram"
-              >
+                data-testid="social-instagram">
+
                 <Instagram size={20} />
               </a>
               <a
@@ -527,8 +527,8 @@ const ContactSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
-                data-testid="social-facebook"
-              >
+                data-testid="social-facebook">
+
                 <Facebook size={20} />
               </a>
             </div>
@@ -544,8 +544,8 @@ const ContactSection = () => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Anita Art of Beauty - Mosonmagyaróvár"
-                data-testid="contact-map"
-              />
+                data-testid="contact-map" />
+
             </div>
           </div>
 
@@ -570,8 +570,8 @@ const ContactSection = () => {
                   required
                   className="input-editorial w-full bg-transparent border-0 border-b border-[#1A1A1A] rounded-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                   placeholder="Az Ön neve"
-                  data-testid="form-name"
-                />
+                  data-testid="form-name" />
+
               </div>
 
               <div>
@@ -586,8 +586,8 @@ const ContactSection = () => {
                   required
                   className="input-editorial w-full bg-transparent border-0 border-b border-[#1A1A1A] rounded-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                   placeholder="email@pelda.hu"
-                  data-testid="form-email"
-                />
+                  data-testid="form-email" />
+
               </div>
 
               <div>
@@ -601,8 +601,8 @@ const ContactSection = () => {
                   onChange={handleChange}
                   className="input-editorial w-full bg-transparent border-0 border-b border-[#1A1A1A] rounded-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0"
                   placeholder="+36 30 123 4567"
-                  data-testid="form-phone"
-                />
+                  data-testid="form-phone" />
+
               </div>
 
               <div>
@@ -617,24 +617,24 @@ const ContactSection = () => {
                   rows={5}
                   className="input-editorial w-full bg-transparent border-0 border-b border-[#1A1A1A] rounded-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 resize-none"
                   placeholder="Miben segíthetek?"
-                  data-testid="form-message"
-                />
+                  data-testid="form-message" />
+
               </div>
 
               <Button
                 type="submit"
                 disabled={isSubmitting}
                 className="btn-primary w-full md:w-auto"
-                data-testid="form-submit"
-              >
+                data-testid="form-submit">
+
                 {isSubmitting ? "Küldés..." : "Üzenet Küldése"}
               </Button>
             </form>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 // Footer
@@ -692,16 +692,16 @@ const Footer = () => {
                 href="https://instagram.com/brattengeieranita"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/50 hover:text-gold transition-colors"
-              >
+                className="text-white/50 hover:text-gold transition-colors">
+
                 <Instagram size={20} />
               </a>
               <a
                 href="https://facebook.com/AnitaLashandMakeUpMovar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/50 hover:text-gold transition-colors"
-              >
+                className="text-white/50 hover:text-gold transition-colors">
+
                 <Facebook size={20} />
               </a>
             </div>
@@ -717,8 +717,8 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 };
 
 // Main Landing Page Component
@@ -735,8 +735,8 @@ const LandingPage = () => {
       </main>
       <Footer />
       <Toaster position="bottom-right" richColors />
-    </>
-  );
+    </>);
+
 };
 
 function App() {
@@ -745,8 +745,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
       </Routes>
-    </BrowserRouter>
-  );
+    </BrowserRouter>);
+
 }
 
 export default App;
