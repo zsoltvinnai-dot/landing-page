@@ -536,7 +536,7 @@ const ContactSection = () => {
             {/* Map */}
             <div className="map-container aspect-video">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2667.3892344859244!2d17.267789776889!3d47.87280917121677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c3e9ae4cc3a6f%3A0x400c4290c1e11e0!2sMosonmagyar%C3%B3v%C3%A1r%2C%20F%C5%91%20u.%2017%2C%209200%20Hungary!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1333.5489!2d17.2694!3d47.8728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c3e7a6d2a0001%3A0x1!2sFő+u.+17%2C+Mosonmagyaróvár%2C+9200!5e0!3m2!1shu!2shu"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
