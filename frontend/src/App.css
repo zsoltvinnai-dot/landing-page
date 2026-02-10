@@ -1,34 +1,318 @@
-.App-logo {
-    height: 40vmin;
+/* Editorial Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes lineGrow {
+    from { width: 0; }
+    to { width: 60px; }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-line-grow {
+    animation: lineGrow 0.8s ease-out forwards;
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-500 { animation-delay: 0.5s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    transition: transform 0.5s ease-out;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(249, 247, 242, 0.1) 0%,
+        rgba(249, 247, 242, 0.4) 40%,
+        rgba(249, 247, 242, 0.95) 100%
+    );
+}
+
+/* Image hover effects */
+.img-zoom {
+    overflow: hidden;
+}
+
+.img-zoom img {
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-zoom:hover img {
+    transform: scale(1.08);
+}
+
+/* Gold accent line */
+.gold-line {
+    width: 60px;
+    height: 1px;
+    background-color: #D4AF37;
+}
+
+.gold-line-vertical {
+    width: 1px;
+    height: 60px;
+    background-color: #D4AF37;
+}
+
+/* Service category tabs */
+.service-tab {
+    position: relative;
+    padding-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.service-tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+.service-tab:hover::after,
+.service-tab.active::after {
+    width: 100%;
+}
+
+.service-tab.active {
+    color: #D4AF37;
+}
+
+/* Bento grid */
+.bento-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Map container */
+.map-container {
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.5s ease;
+}
+
+.map-container:hover {
+    filter: grayscale(0%) contrast(1);
+}
+
+/* Form styling */
+.form-input-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.form-input-wrapper label {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #1A1A1A;
+    transition: all 0.3s ease;
     pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.form-input-wrapper input:focus ~ label,
+.form-input-wrapper input:not(:placeholder-shown) ~ label,
+.form-input-wrapper textarea:focus ~ label,
+.form-input-wrapper textarea:not(:placeholder-shown) ~ label {
+    top: -0.75rem;
+    font-size: 0.65rem;
+    color: #D4AF37;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-indicator::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, #D4AF37, transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+    50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* Social icons */
+.social-icon {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
+    width: 44px;
+    height: 44px;
+    border: 1px solid #E6DCCF;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    border-color: #D4AF37;
+    background-color: #D4AF37;
     color: white;
 }
 
-.App-link {
-    color: #61dafb;
+/* Navigation */
+.nav-link {
+    position: relative;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Loyalty badge */
+.loyalty-badge {
+    position: relative;
+    padding: 2rem;
+    background: white;
+    border: 1px solid #E6DCCF;
+    transition: all 0.4s ease;
+}
+
+.loyalty-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background-color: #D4AF37;
+    transition: height 0.4s ease;
+}
+
+.loyalty-badge:hover {
+    border-color: #D4AF37;
+}
+
+.loyalty-badge:hover::before {
+    height: 100%;
+}
+
+/* Responsive padding */
+.section-padding {
+    padding: 4rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .section-padding {
+        padding: 6rem 3rem;
     }
-    to {
-        transform: rotate(360deg);
+}
+
+@media (min-width: 1024px) {
+    .section-padding {
+        padding: 8rem 4rem;
     }
+}
+
+/* Hide scrollbar but allow scroll */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
 }
