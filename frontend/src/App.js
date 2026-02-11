@@ -116,13 +116,13 @@ const Navigation = () => {
     <nav
       data-testid="main-navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? "bg-[#F9F7F2]/95 backdrop-blur-sm shadow-sm" : "bg-transparent"}`
+      scrolled ? "bg-[#F9F7F2]/95 backdrop-blur-sm shadow-sm" : "bg-[#F9F7F2]/80 backdrop-blur-sm"}`
       }>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
-          <a href="#" className="md:text-2xl font-serif text-xl tracking-tight !text-[#D4AF37]" data-testid="logo">ANITA 
-            <span className="text-gold">|</span> Art of Beauty
+          <a href="#" className="md:text-2xl font-serif text-xl tracking-tight text-[#D4AF37]" data-testid="logo">ANITA 
+            <span className="text-[#1A1A1A]">|</span> <span className="text-[#1A1A1A]">Art of Beauty</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -131,7 +131,7 @@ const Navigation = () => {
             <a
               key={link.href}
               href={link.href}
-              className="nav-link font-sans text-charcoal hover:text-gold"
+              className="nav-link font-sans text-[#1A1A1A] hover:text-gold"
               data-testid={`nav-${link.label.toLowerCase()}`}>
 
                 {link.label}
