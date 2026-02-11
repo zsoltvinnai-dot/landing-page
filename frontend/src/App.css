@@ -266,7 +266,6 @@
 .loyalty-badge {
     position: relative;
     padding: 2rem;
-    background: white;
     border: 1px solid #E6DCCF;
     transition: all 0.4s ease;
 }
