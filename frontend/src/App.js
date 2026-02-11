@@ -18,33 +18,32 @@ const servicesData = {
     title: "Szempilla Építés",
     image: "https://images.unsplash.com/photo-1652201767864-49472c48b145?w=800&q=80",
     items: [
-    { name: "Klasszikus Szempilla Építés", duration: "90 perc", price: "12.000 Ft" },
-    { name: "Volume Szempilla Építés", duration: "120 perc", price: "15.000 Ft" },
-    { name: "Hybrid Szempilla Építés", duration: "120 perc", price: "14.000 Ft" },
-    { name: "Szempilla Kiegészítés", duration: "45 perc", price: "6.000 Ft" },
+    { name: "Klasszikus Szempilla Építés", duration: "150 perc", price: "12.000 Ft" },
+    { name: "Volume Szempilla Építés", duration: "180 perc", price: "15.000 Ft" },
+    { name: "Extra styling Szempilla Építés", duration: "180 perc", price: "16.000 Ft" },
     { name: "Szempilla Eltávolítás", duration: "30 perc", price: "3.000 Ft" },
-    { name: "Karbantartás (3 hét)", duration: "60 perc", price: "8.000 Ft" },
-    { name: "Karbantartás (4-5 hét)", duration: "90 perc", price: "10.000 Ft" }]
+    { name: "Karbantartás (3 hét)", duration: "120 perc", price: "10.000 Ft" },
+    { name: "Karbantartás (4-5 hét)", duration: "120 perc", price: "14.000 Ft" }
+    { name: "Szempilla Lifting", duration: "60 perc", price: "10.000 Ft" }]
 
   },
   szemoldok: {
     title: "Szemöldök Kezelések",
     image: "https://images.unsplash.com/photo-1521146764736-56c929d59c83?w=800&q=80",
     items: [
-    { name: "Szemöldök Építés (Microblading Hatás)", duration: "60 perc", price: "8.000 Ft" },
-    { name: "Szemöldök Festés", duration: "30 perc", price: "3.000 Ft" },
-    { name: "Szemöldök Formázás + Festés", duration: "45 perc", price: "5.000 Ft" },
-    { name: "Szemöldök Kiegészítés", duration: "30 perc", price: "4.000 Ft" }]
+    { name: "Szemöldök Festés", duration: "20 perc", price: "2.000 Ft" },
+    { name: "Szemöldök Formázás + Festés", duration: "30 perc", price: "3.000 Ft" },
+    { name: "Szemöldök Laminálás", duration: "60 perc", price: "10.000 Ft" }]
 
   },
   smink: {
     title: "Smink Szolgáltatások",
     image: "https://images.unsplash.com/photo-1692856184951-8e06bba6b4b5?w=800&q=80",
     items: [
-    { name: "Napi Smink", duration: "45 perc", price: "8.000 Ft" },
-    { name: "Esti Smink", duration: "60 perc", price: "12.000 Ft" },
-    { name: "Bridal Smink", duration: "90 perc", price: "18.000 Ft" },
-    { name: "Bridal Smink + Próba", duration: "120 perc", price: "22.000 Ft" },
+    { name: "Nappali Smink", duration: "45 perc", price: "8.000 Ft" },
+    { name: "Alkalmi Smink", duration: "60 perc", price: "12.000 Ft" },
+    { name: "Bridal Smink Próba", duration: "90 perc", price: "15.000 Ft" },
+    { name: "Bridal Smink", duration: "90 perc", price: "15.000 Ft" },
     { name: "Smink Korrekció", duration: "30 perc", price: "5.000 Ft" },
     { name: "Smink Oktatás (1 óra)", duration: "60 perc", price: "10.000 Ft" },
     { name: "Smink Oktatás (2 óra)", duration: "120 perc", price: "18.000 Ft" }]
@@ -64,12 +63,12 @@ const servicesData = {
 
   },
   waposon: {
-    title: "Waposon Kezelések",
+    title: "Arcmasszázs Kezelések",
     image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&q=80",
     items: [
-    { name: "Waposon Arckezelés", duration: "45 perc", price: "14.000 Ft" },
-    { name: "Waposon + Arcmaszk", duration: "60 perc", price: "18.000 Ft" },
-    { name: "Waposon + Hidrodermabrasio", duration: "60 perc", price: "20.000 Ft" }]
+    { name: "Frissítő Arcmasszázs", duration: "30 perc", price: "6.000 Ft" },
+    { name: "Japán Arcmasszázs + Dekoltázs", duration: "45 perc", price: "10.000 Ft" },
+    { name: "Face Lifting Arcmasszázs + Dekoltázs", duration: "60 perc", price: "12.000 Ft" }]
 
   },
   csomagok: {
