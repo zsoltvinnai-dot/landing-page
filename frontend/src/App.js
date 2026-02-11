@@ -184,33 +184,32 @@ const HeroSection = () => {
       <div
         className="hero-bg"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1588683301867-c442a9ed1389?w=1920&q=80')`
+          backgroundImage: `url('https://images.unsplash.com/photo-1648967711484-c08ed128dbae?w=1920&q=80')`
         }} />
 
-      <div className="hero-overlay" />
+      <div className="hero-overlay-elegant" />
       <div className="grain-overlay absolute inset-0" />
 
-      <div className="relative z-10 min-h-screen flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-12">
-        <div className="max-w-4xl !bg-[rgba(0,0,0,0.01)]">
-          <span className="editorial-label animate-fade-in-up opacity-0 !text-[#000000]" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
-            Mosonmagyaróvár
-          </span>
-          <h1 className="editorial-h1 mt-4 mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-            A szépség <br />
-            <span className="italic">művészete</span>
-          </h1>
-          <p className="editorial-body max-w-xl animate-fade-in-up mb-8 opacity-0 !text-[#000000]" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
-            Professzionális szempilla építés, sminkelés és arckezelések prémium
-            minőségben. Fedezd fel a természetes szépséged Anita Art of Beauty
-            szalonban.
-          </p>
-          <div className="flex flex-wrap gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
-            <a href="#szolgaltatasok" className="btn-primary" data-testid="hero-services-btn">
-              Szolgáltatások
-            </a>
-            <a href="#kapcsolat" className="btn-secondary" data-testid="hero-contact-btn">
-              Kapcsolat
-            </a>
+      <div className="relative z-10 min-h-screen flex flex-col justify-center md:justify-end pb-16 md:pb-32 px-6 md:px-12">
+        <div className="max-w-2xl">
+          <div className="hero-text-box p-8 md:p-12">
+            <h1 className="editorial-h1 mb-6 opacity-0 animate-fade-in-up text-[#1A1A1A]" style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}>
+              A szépség <br />
+              <span className="italic">művészete</span>
+            </h1>
+            <p className="editorial-body max-w-xl animate-fade-in-up mb-8 opacity-0 text-[#3A3A3A]" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
+              Professzionális szempilla építés, sminkelés és arckezelések prémium
+              minőségben. Fedezd fel a természetes szépséged Anita Art of Beauty
+              szalonban.
+            </p>
+            <div className="flex flex-wrap gap-4 opacity-0 animate-fade-in-up" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
+              <a href="#szolgaltatasok" className="btn-primary" data-testid="hero-services-btn">
+                Szolgáltatások
+              </a>
+              <a href="#kapcsolat" className="btn-secondary" data-testid="hero-contact-btn">
+                Kapcsolat
+              </a>
+            </div>
           </div>
         </div>
 
