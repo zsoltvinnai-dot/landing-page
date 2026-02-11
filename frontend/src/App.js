@@ -399,7 +399,7 @@ const LoyaltySection = () => {
           {loyaltyLevels.map((level, idx) =>
           <div
             key={idx}
-            className="loyalty-badge bg-[#D4AF37]/20 border-[#D4AF37]/40 hover:border-gold hover:bg-[#D4AF37]/30"
+            className="loyalty-badge bg-[#2A2A2A] border-[#D4AF37]/40 hover:border-gold"
             data-testid={`loyalty-${level.name.toLowerCase()}`}>
 
               <span className="text-gold text-4xl md:text-5xl font-serif">{level.discount}</span>
