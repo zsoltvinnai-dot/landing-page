@@ -184,7 +184,7 @@ const HeroSection = () => {
       <div
         className="hero-bg"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1633465631144-aa321b66d44a?w=1920&q=80')`
+          backgroundImage: `url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1920&q=80')`
         }} />
 
       <div className="hero-overlay" />
