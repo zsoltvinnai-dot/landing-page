@@ -366,9 +366,9 @@ const AboutSection = () => {
           <div className="order-1 lg:order-2">
             <div className="img-zoom aspect-[3/4]">
               <img
-                src="https://images.unsplash.com/photo-1601002257790-ebe0966a85ae?w=800&q=80"
-                alt="Anita Art of Beauty szalon"
-                className="w-full h-full object-cover"
+                src="https://customer-assets.emergentagent.com/job_beauty-landing-22/artifacts/insodsqu_copy_FB491B37-E632-4709-95D2-C5206AA2B8A0.JPEG"
+                alt="Brattengeier Anita - Anita Art of Beauty"
+                className="w-full h-full object-cover object-top"
                 data-testid="about-image" />
 
             </div>
