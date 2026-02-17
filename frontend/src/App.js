@@ -379,6 +379,72 @@ const AboutSection = () => {
 
 };
 
+// Gallery Section
+const GallerySection = () => {
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchGalleryImages();
+  }, []);
+
+  const fetchGalleryImages = async () => {
+    try {
+      const response = await axios.get(`${API}/gallery`);
+      setImages(response.data);
+    } catch (error) {
+      console.error("Error fetching gallery:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const categories = ["Szempillaépítés", "Smink", "Arckezelés", "Szemöldök"];
+
+  return (
+    <section id="galeria" className="section-padding" data-testid="gallery-section">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-16 md:mb-24">
+          <span className="editorial-label">Munkáim</span>
+          <div className="flex items-end justify-between mt-4">
+            <h2 className="editorial-h2">Galéria</h2>
+            <div className="gold-line hidden md:block" />
+          </div>
+        </div>
+
+        {loading ? (
+          <div className="text-center py-12">
+            <p className="editorial-body">Betöltés...</p>
+          </div>
+        ) : images.length === 0 ? (
+          <div className="text-center py-12 bg-[#F2EBE0] rounded">
+            <Image size={48} className="mx-auto text-gold mb-4" />
+            <p className="editorial-body">Hamarosan feltöltöm a munkáimat!</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {images.map((image) => (
+              <div key={image.id} className="img-zoom aspect-square group relative">
+                <img
+                  src={image.image_url}
+                  alt={image.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <div>
+                    <p className="text-white font-sans text-sm font-bold">{image.title}</p>
+                    <p className="text-white/70 text-xs">{image.category}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
 // Loyalty Section
 const LoyaltySection = () => {
   return (
