@@ -1,13 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Toaster, toast } from "sonner";
-import { Phone, Mail, MapPin, Instagram, Facebook, Menu, X, Clock, Award, Heart, Sparkles, ChevronDown } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Menu, X, Clock, Award, Heart, Sparkles, Image, Trash2, Plus, Edit, LogOut, Save } from "lucide-react";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
