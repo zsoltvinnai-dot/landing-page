@@ -107,6 +107,7 @@ const Navigation = () => {
 
   const navLinks = [
   { href: "#szolgaltatasok", label: "Szolgáltatások" },
+  { href: "#galeria", label: "Galéria" },
   { href: "#rolam", label: "Rólam" },
   { href: "#husegprogram", label: "Hűségprogram" },
   { href: "#kapcsolat", label: "Kapcsolat" }];
