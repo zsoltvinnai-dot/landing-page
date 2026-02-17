@@ -145,6 +145,111 @@ class BeautyAPITester:
         """Test getting status checks"""
         return self.run_test("Get Status Checks", "GET", "status", 200)
 
+    def test_admin_login(self):
+        """Test admin login with correct password"""
+        admin_data = {
+            "password": "AnitaBeauty2024"
+        }
+        
+        return self.run_test(
+            "Admin Login",
+            "POST",
+            "admin/login",
+            200,
+            data=admin_data
+        )
+
+    def test_admin_login_wrong_password(self):
+        """Test admin login with wrong password"""
+        admin_data = {
+            "password": "wrongpassword"
+        }
+        
+        return self.run_test(
+            "Admin Login Wrong Password",
+            "POST",
+            "admin/login",
+            401,
+            data=admin_data
+        )
+
+    def test_gallery_endpoints(self):
+        """Test gallery CRUD operations"""
+        # Test getting gallery (should be empty initially or have existing images)
+        success, gallery_data = self.run_test("Get Gallery Images", "GET", "gallery", 200)
+        
+        # Test adding a new gallery image
+        new_image = {
+            "title": "Test Szempilla Kép",
+            "category": "Szempillaépítés",
+            "image_url": "https://images.unsplash.com/photo-1645735123314-d11fcfdd0000?w=800&q=80"
+        }
+        
+        success, image_response = self.run_test(
+            "Add Gallery Image",
+            "POST",
+            "gallery",
+            200,
+            data=new_image
+        )
+        
+        image_id = None
+        if success and image_response:
+            image_id = image_response.get('id')
+            print(f"✅ Created image with ID: {image_id}")
+        
+        # Test deleting the image if we created one
+        if image_id:
+            self.run_test(
+                "Delete Gallery Image",
+                "DELETE",
+                f"gallery/{image_id}",
+                200
+            )
+        
+        return success
+
+    def test_promotions_endpoints(self):
+        """Test promotions CRUD operations"""
+        # Test getting all promotions
+        success, promos_data = self.run_test("Get All Promotions", "GET", "promotions/all", 200)
+        
+        # Test adding a new promotion
+        new_promo = {
+            "title": "Test Akció",
+            "description": "Ez egy teszt akció a szempillaépítésre",
+            "discount_percent": 20,
+            "valid_until": "2024.12.31",
+            "active": True
+        }
+        
+        success, promo_response = self.run_test(
+            "Add Promotion",
+            "POST",
+            "promotions",
+            200,
+            data=new_promo
+        )
+        
+        promo_id = None
+        if success and promo_response:
+            promo_id = promo_response.get('id')
+            print(f"✅ Created promotion with ID: {promo_id}")
+        
+        # Test getting active promotions
+        self.run_test("Get Active Promotions", "GET", "promotions", 200)
+        
+        # Test deleting the promotion if we created one
+        if promo_id:
+            self.run_test(
+                "Delete Promotion",
+                "DELETE",
+                f"promotions/{promo_id}",
+                200
+            )
+        
+        return success
+
 def main():
     print("🚀 Starting ANITA Art of Beauty API Tests")
     print("=" * 50)
