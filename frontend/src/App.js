@@ -15,15 +15,15 @@ const API = `${BACKEND_URL}/api`;
 // Services data from A version price list
 const servicesData = {
   szempilla: {
-    title: "Szempilla Építés",
-    image: "https://images.unsplash.com/photo-1652201767864-49472c48b145?w=800&q=80",
+    title: "Szempillaépítés",
+    image: "https://images.unsplash.com/photo-1645735123314-d11fcfdd0000?w=800&q=80",
     items: [
-    { name: "Klasszikus Szempilla Építés", duration: "150 perc", price: "12.000 Ft" },
-    { name: "Volume Szempilla Építés", duration: "180 perc", price: "15.000 Ft" },
-    { name: "Extra styling Szempilla Építés", duration: "180 perc", price: "16.000 Ft" },
+    { name: "Klasszikus Szempillaépítés", duration: "150 perc", price: "12.000 Ft" },
+    { name: "Volume Szempillaépítés", duration: "180 perc", price: "15.000 Ft" },
+    { name: "Extra styling Szempillaépítés", duration: "180 perc", price: "16.000 Ft" },
     { name: "Szempilla Eltávolítás", duration: "30 perc", price: "3.000 Ft" },
-    { name: "Karbantartás (3 hét)", duration: "120 perc", price: "10.000 Ft" },
-    { name: "Karbantartás (4-5 hét)", duration: "120 perc", price: "14.000 Ft" },
+    { name: "Töltés (3 hét)", duration: "120 perc", price: "10.000 Ft" },
+    { name: "Töltés (4-5 hét)", duration: "120 perc", price: "14.000 Ft" },
     { name: "Szempilla Lifting", duration: "60 perc", price: "10.000 Ft" }]
 
   },
