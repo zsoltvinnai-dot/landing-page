@@ -277,6 +277,19 @@ def main():
     tester.test_status_check_creation()
     tester.test_get_status_checks()
     
+    # Test admin functionality
+    print("\n🔐 Testing Admin Functionality...")
+    tester.test_admin_login()
+    tester.test_admin_login_wrong_password()
+    
+    # Test gallery functionality
+    print("\n🖼️ Testing Gallery Functionality...")
+    tester.test_gallery_endpoints()
+    
+    # Test promotions functionality
+    print("\n🎯 Testing Promotions Functionality...")
+    tester.test_promotions_endpoints()
+    
     # Print final results
     print("\n" + "=" * 50)
     print(f"📊 Final Results: {tester.tests_passed}/{tester.tests_run} tests passed")
