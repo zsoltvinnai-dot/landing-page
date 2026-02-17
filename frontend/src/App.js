@@ -649,7 +649,7 @@ const Footer = () => {
               ANITA <span className="text-gold">|</span> Art of Beauty
             </h3>
             <p className="text-sm text-white/50 leading-relaxed">
-              Szempilla építés, professzionális sminkelés és prémium arckezelések
+              Szempillaépítés, professzionális sminkelés és prémium arckezelések
               Mosonmagyaróváron.
             </p>
           </div>
