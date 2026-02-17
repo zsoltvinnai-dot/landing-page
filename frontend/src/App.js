@@ -198,7 +198,7 @@ const HeroSection = () => {
               <span className="italic">művészete</span>
             </h1>
             <p className="editorial-body max-w-xl animate-fade-in-up mb-8 opacity-0 text-[#3A3A3A]" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-              Professzionális szempilla építés, sminkelés és arckezelések prémium
+              Professzionális szempillaépítés, sminkelés és arckezelések prémium
               minőségben. Fedezd fel a természetes szépséged Anita Art of Beauty
               szalonban.
             </p>
