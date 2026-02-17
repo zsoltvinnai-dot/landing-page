@@ -786,6 +786,321 @@ const Footer = () => {
 
 };
 
+// Admin Login Component
+const AdminLogin = () => {
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      const response = await axios.post(`${API}/admin/login`, { password });
+      if (response.data.success) {
+        localStorage.setItem("adminAuth", "true");
+        toast.success("Sikeres bejelentkezés!");
+        navigate("/admin/dashboard");
+      }
+    } catch (error) {
+      toast.error("Hibás jelszó!");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#F9F7F2] flex items-center justify-center px-6">
+      <div className="max-w-md w-full bg-white p-8 border border-[#E6DCCF]">
+        <h1 className="font-serif text-3xl mb-2 text-center">Admin Belépés</h1>
+        <p className="text-center text-[#5A5A5A] mb-8">ANITA | Art of Beauty</p>
+        
+        <form onSubmit={handleLogin} className="space-y-6">
+          <div>
+            <label className="font-sans text-xs uppercase tracking-widest mb-2 block">Jelszó</label>
+            <Input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="input-editorial w-full bg-transparent border-0 border-b border-[#1A1A1A] rounded-none"
+              placeholder="Admin jelszó"
+              required
+              data-testid="admin-password"
+            />
+          </div>
+          <Button type="submit" className="btn-primary w-full" disabled={isLoading} data-testid="admin-login-btn">
+            {isLoading ? "Bejelentkezés..." : "Belépés"}
+          </Button>
+        </form>
+        
+        <a href="/" className="block text-center mt-6 text-sm text-[#5A5A5A] hover:text-gold">
+          ← Vissza a főoldalra
+        </a>
+      </div>
+      <Toaster position="bottom-right" richColors />
+    </div>
+  );
+};
+
+// Admin Dashboard Component
+const AdminDashboard = () => {
+  const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("gallery");
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [promotions, setPromotions] = useState([]);
+  const [newImage, setNewImage] = useState({ title: "", category: "Szempillaépítés", image_url: "" });
+  const [newPromo, setNewPromo] = useState({ title: "", description: "", discount_percent: "", valid_until: "", active: true });
+
+  useEffect(() => {
+    const isAuth = localStorage.getItem("adminAuth");
+    if (!isAuth) {
+      navigate("/admin");
+      return;
+    }
+    fetchData();
+  }, [navigate]);
+
+  const fetchData = async () => {
+    try {
+      const [galleryRes, promosRes] = await Promise.all([
+        axios.get(`${API}/gallery`),
+        axios.get(`${API}/promotions/all`)
+      ]);
+      setGalleryImages(galleryRes.data);
+      setPromotions(promosRes.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("adminAuth");
+    navigate("/admin");
+  };
+
+  const handleAddImage = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`${API}/gallery`, newImage);
+      toast.success("Kép hozzáadva!");
+      setNewImage({ title: "", category: "Szempillaépítés", image_url: "" });
+      fetchData();
+    } catch (error) {
+      toast.error("Hiba a kép hozzáadásakor");
+    }
+  };
+
+  const handleDeleteImage = async (id) => {
+    if (!window.confirm("Biztosan törölni szeretnéd?")) return;
+    try {
+      await axios.delete(`${API}/gallery/${id}`);
+      toast.success("Kép törölve!");
+      fetchData();
+    } catch (error) {
+      toast.error("Hiba a törléskor");
+    }
+  };
+
+  const handleAddPromo = async (e) => {
+    e.preventDefault();
+    try {
+      const promoData = {
+        ...newPromo,
+        discount_percent: newPromo.discount_percent ? parseInt(newPromo.discount_percent) : null
+      };
+      await axios.post(`${API}/promotions`, promoData);
+      toast.success("Akció hozzáadva!");
+      setNewPromo({ title: "", description: "", discount_percent: "", valid_until: "", active: true });
+      fetchData();
+    } catch (error) {
+      toast.error("Hiba az akció hozzáadásakor");
+    }
+  };
+
+  const handleDeletePromo = async (id) => {
+    if (!window.confirm("Biztosan törölni szeretnéd?")) return;
+    try {
+      await axios.delete(`${API}/promotions/${id}`);
+      toast.success("Akció törölve!");
+      fetchData();
+    } catch (error) {
+      toast.error("Hiba a törléskor");
+    }
+  };
+
+  const categories = ["Szempillaépítés", "Smink", "Arckezelés", "Szemöldök"];
+
+  return (
+    <div className="min-h-screen bg-[#F9F7F2]">
+      {/* Admin Header */}
+      <header className="bg-[#1A1A1A] text-white py-4 px-6">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <h1 className="font-serif text-xl">
+            <span className="text-gold">ANITA</span> Admin Dashboard
+          </h1>
+          <div className="flex items-center gap-4">
+            <a href="/" className="text-sm text-white/70 hover:text-gold">Megtekintés</a>
+            <button onClick={handleLogout} className="flex items-center gap-2 text-sm text-white/70 hover:text-gold">
+              <LogOut size={16} /> Kijelentkezés
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div className="max-w-7xl mx-auto py-8 px-6">
+        <Tabs value={activeTab} onValueChange={setActiveTab}>
+          <TabsList className="mb-8 bg-white border border-[#E6DCCF]">
+            <TabsTrigger value="gallery" className="data-[state=active]:bg-gold data-[state=active]:text-white">
+              Galéria
+            </TabsTrigger>
+            <TabsTrigger value="promotions" className="data-[state=active]:bg-gold data-[state=active]:text-white">
+              Akciók
+            </TabsTrigger>
+          </TabsList>
+
+          {/* Gallery Tab */}
+          <TabsContent value="gallery">
+            <div className="bg-white p-6 border border-[#E6DCCF] mb-8">
+              <h2 className="font-serif text-2xl mb-6">Új Kép Hozzáadása</h2>
+              <form onSubmit={handleAddImage} className="grid md:grid-cols-4 gap-4">
+                <Input
+                  placeholder="Kép címe"
+                  value={newImage.title}
+                  onChange={(e) => setNewImage({...newImage, title: e.target.value})}
+                  required
+                  data-testid="gallery-title"
+                />
+                <select
+                  value={newImage.category}
+                  onChange={(e) => setNewImage({...newImage, category: e.target.value})}
+                  className="border border-[#E6DCCF] px-3 py-2 bg-white"
+                  data-testid="gallery-category"
+                >
+                  {categories.map(cat => (
+                    <option key={cat} value={cat}>{cat}</option>
+                  ))}
+                </select>
+                <Input
+                  placeholder="Kép URL"
+                  value={newImage.image_url}
+                  onChange={(e) => setNewImage({...newImage, image_url: e.target.value})}
+                  required
+                  data-testid="gallery-url"
+                />
+                <Button type="submit" className="btn-primary" data-testid="gallery-add-btn">
+                  <Plus size={16} className="mr-2" /> Hozzáadás
+                </Button>
+              </form>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {galleryImages.map((image) => (
+                <div key={image.id} className="relative group bg-white border border-[#E6DCCF] overflow-hidden">
+                  <img src={image.image_url} alt={image.title} className="w-full aspect-square object-cover" />
+                  <div className="p-3">
+                    <p className="font-bold text-sm">{image.title}</p>
+                    <p className="text-xs text-[#5A5A5A]">{image.category}</p>
+                  </div>
+                  <button
+                    onClick={() => handleDeleteImage(image.id)}
+                    className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+                    data-testid={`delete-image-${image.id}`}
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {galleryImages.length === 0 && (
+              <div className="text-center py-12 bg-white border border-[#E6DCCF]">
+                <Image size={48} className="mx-auto text-[#E6DCCF] mb-4" />
+                <p className="text-[#5A5A5A]">Még nincsenek képek. Adj hozzá az első képet!</p>
+              </div>
+            )}
+          </TabsContent>
+
+          {/* Promotions Tab */}
+          <TabsContent value="promotions">
+            <div className="bg-white p-6 border border-[#E6DCCF] mb-8">
+              <h2 className="font-serif text-2xl mb-6">Új Akció Hozzáadása</h2>
+              <form onSubmit={handleAddPromo} className="grid md:grid-cols-2 gap-4">
+                <Input
+                  placeholder="Akció címe"
+                  value={newPromo.title}
+                  onChange={(e) => setNewPromo({...newPromo, title: e.target.value})}
+                  required
+                  data-testid="promo-title"
+                />
+                <Input
+                  placeholder="Kedvezmény % (opcionális)"
+                  type="number"
+                  value={newPromo.discount_percent}
+                  onChange={(e) => setNewPromo({...newPromo, discount_percent: e.target.value})}
+                  data-testid="promo-discount"
+                />
+                <Textarea
+                  placeholder="Leírás"
+                  value={newPromo.description}
+                  onChange={(e) => setNewPromo({...newPromo, description: e.target.value})}
+                  required
+                  className="md:col-span-2"
+                  data-testid="promo-description"
+                />
+                <Input
+                  placeholder="Érvényesség (pl. 2024.12.31)"
+                  value={newPromo.valid_until}
+                  onChange={(e) => setNewPromo({...newPromo, valid_until: e.target.value})}
+                  data-testid="promo-valid"
+                />
+                <Button type="submit" className="btn-primary" data-testid="promo-add-btn">
+                  <Plus size={16} className="mr-2" /> Akció Hozzáadása
+                </Button>
+              </form>
+            </div>
+
+            <div className="space-y-4">
+              {promotions.map((promo) => (
+                <div key={promo.id} className="bg-white p-6 border border-[#E6DCCF] flex justify-between items-start">
+                  <div>
+                    <h3 className="font-serif text-xl mb-2">{promo.title}</h3>
+                    <p className="text-[#5A5A5A] mb-2">{promo.description}</p>
+                    <div className="flex gap-4 text-sm">
+                      {promo.discount_percent && (
+                        <span className="text-gold font-bold">{promo.discount_percent}% kedvezmény</span>
+                      )}
+                      {promo.valid_until && (
+                        <span className="text-[#5A5A5A]">Érvényes: {promo.valid_until}</span>
+                      )}
+                      <span className={promo.active ? "text-green-600" : "text-red-600"}>
+                        {promo.active ? "Aktív" : "Inaktív"}
+                      </span>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => handleDeletePromo(promo.id)}
+                    className="text-red-500 hover:text-red-700 p-2"
+                    data-testid={`delete-promo-${promo.id}`}
+                  >
+                    <Trash2 size={20} />
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {promotions.length === 0 && (
+              <div className="text-center py-12 bg-white border border-[#E6DCCF]">
+                <p className="text-[#5A5A5A]">Még nincsenek akciók. Adj hozzá az első akciót!</p>
+              </div>
+            )}
+          </TabsContent>
+        </Tabs>
+      </div>
+      <Toaster position="bottom-right" richColors />
+    </div>
+  );
+};
+
 // Main Landing Page Component
 const LandingPage = () => {
   return (
@@ -794,6 +1109,7 @@ const LandingPage = () => {
       <main>
         <HeroSection />
         <ServicesSection />
+        <GallerySection />
         <AboutSection />
         <LoyaltySection />
         <ContactSection />
@@ -809,6 +1125,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>);
 
