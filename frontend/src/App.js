@@ -781,6 +781,11 @@ const Footer = () => {
             Kozmetikus · Szempillás · Sminkes — Mosonmagyaróvár
           </p>
         </div>
+                <div className="flex gap-4">
+                  <a href="/aszf" className="text-xs text-white/40 hover:text-[#D4AF37] transition-colors">ÁSZF</a>
+                  <a href="/adatvedelem" className="text-xs text-white/40 hover:text-[#D4AF37] transition-colors">Adatvédelem</a>
+                  <a href="/cookie" className="text-xs text-white/40 hover:text-[#D4AF37] transition-colors">Cookie</a>
+                </div>
       </div>
     </footer>);
 
@@ -1101,6 +1106,210 @@ const AdminDashboard = () => {
   );
 };
 
+
+// ÁSZF Page Component
+const ASZFPage = () => {
+  const navigate = useNavigate();
+  return (
+    <div className="min-h-screen bg-[#F9F7F2]">
+      <div className="bg-[#1A1A1A] py-4 px-6 flex items-center justify-between">
+        <button onClick={() => navigate('/')} className="text-white/70 hover:text-[#D4AF37] text-sm transition-colors flex items-center gap-2">
+          ← Vissza a főoldalra
+        </button>
+        <span className="text-white font-serif text-lg">ANITA | Art of Beauty</span>
+      </div>
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        <h1 className="font-serif text-4xl mb-2 text-[#1A1A1A]">Általános Szerződési Feltételek</h1>
+        <p className="text-[#1A1A1A]/50 text-sm mb-10">Utoljára frissítve: 2026. január 1.</p>
+
+        <div className="space-y-8 text-[#1A1A1A]/80 leading-relaxed">
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">1. Az ÁSZF hatálya és elfogadása</h2>
+            <p>Jelen Általános Szerződési Feltételek (továbbiakban: ÁSZF) az Anita Art of Beauty szépségszalon (továbbiakban: Szolgáltató) és az ügyfelek (továbbiakban: Ügyfél) között létrejövő jogviszonyra vonatkoznak. Az időpontfoglalással vagy a szolgáltatások igénybevételével az Ügyfél elfogadja jelen ÁSZF rendelkezéseit.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">2. Szolgáltató adatai</h2>
+            <p><strong>Neve:</strong> Anita Art of Beauty</p>
+            <p><strong>Vezető:</strong> Brattengeier Anita</p>
+            <p><strong>Székhely:</strong> 9200 Mosonmagyaróvár, Fő u. 17.</p>
+            <p><strong>E-mail:</strong> anitabrattengeier@gmail.com</p>
+            <p><strong>Telefon:</strong> +36 30 922 3271</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">3. Időpontfoglalás és lemondás</h2>
+            <p>Az Ügyfél időpontot foglalhat telefonon, e-mailben vagy a weboldalon keresztül. Az időpont lemondását legkésőbb 24 órával a kezelés előtt kell jelezni. A 24 óránál rövidebb időn belüli lemondás esetén a Szolgáltató fenntartja a jogot a kezelés díjának részleges vagy teljes kiszámlázására. Az el nem foglalt időpont és a foglalás nélküli megjelenés esetén a Szolgáltató a szolgáltatás megtagadásának jogát fenntartja.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">4. Árak és fizetési feltételek</h2>
+            <p>Az aktuális árlista a weboldalon és a szalonban megtekinthető. A Szolgáltató fenntartja az árak megváltoztatásának jogát, amelyről az Ügyfeleket előzetesen értesíti. A fizetés készpénzben vagy banki átutalással történhet. A kezelések díja a helyszínen esedékes.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">5. Szavatosság és panaszkezelés</h2>
+            <p>A Szolgáltató vállalja, hogy a kezeléseket szakszerűen és az egészségügyi előírásoknak megfelelően végzi. Amennyiben az Ügyfél a szolgáltatással kapcsolatban kifogást emel, azt a kezelést követő 48 órán belül jelezheti a Szolgáltató felé. A Szolgáltató kötelezi magát, hogy a panaszokat haladéktalanul kivizsgálja és az észszerű megoldást megtalálja.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">6. Egészségügyi nyilatkozat</h2>
+            <p>Az Ügyfél köteles tájékoztatni a Szolgáltatót minden, a kezelés szempontjából releváns egészségügyi állapotáról (allergiák, bőrproblémák, terhesség stb.). A valótlan vagy hiányos tájékoztatásból eredő károkért a Szolgáltató felelősséget nem vállal.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">7. Hűségprogram feltételei</h2>
+            <p>A hűségprogram keretében gyűjtött pontok nem válthatók készpénzre. A pontok felhasználhatók a weboldalon megjelölt szolgáltatások kedvezményes igénybevételéhez. A Szolgáltató fenntartja a hűségprogram feltételeinek módosítási jogát, amelyről az ügyfeleket tájékoztatja.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">8. Vegyes rendelkezések</h2>
+            <p>Jelen ÁSZF-re a magyar jog az irányadó. A felek közötti esetleges jogvitákat elsősorban tárgyalásos úton kísérlik meg rendezni. Amennyiben ez nem vezet eredményre, a hatáskörrel és illetékességgel rendelkező bíróság jár el. A Szolgáltató fenntartja az ÁSZF módosításának jogát. A módosítások a weboldalon való közzétételtől hatályosak.</p>
+          </section>
+        </div>
+      </div>
+      <footer className="bg-[#1A1A1A] text-white/40 text-center py-6 text-xs mt-12">
+        <p>© 2026 Anita Art of Beauty. Minden jog fenntartva.</p>
+      </footer>
+    </div>
+  );
+};
+
+// Adatvédelmi Tájékoztató (GDPR) Component
+const GDPRPage = () => {
+  const navigate = useNavigate();
+  return (
+    <div className="min-h-screen bg-[#F9F7F2]">
+      <div className="bg-[#1A1A1A] py-4 px-6 flex items-center justify-between">
+        <button onClick={() => navigate('/')} className="text-white/70 hover:text-[#D4AF37] text-sm transition-colors flex items-center gap-2">
+          ← Vissza a főoldalra
+        </button>
+        <span className="text-white font-serif text-lg">ANITA | Art of Beauty</span>
+      </div>
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        <h1 className="font-serif text-4xl mb-2 text-[#1A1A1A]">Adatvédelmi Tájékoztató</h1>
+        <p className="text-[#1A1A1A]/50 text-sm mb-10">Utoljára frissítve: 2026. január 1. | GDPR megfelelő</p>
+
+        <div className="space-y-8 text-[#1A1A1A]/80 leading-relaxed">
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">1. Adatkezelő adatai</h2>
+            <p><strong>Adatkezelő neve:</strong> Brattengeier Anita (Anita Art of Beauty)</p>
+            <p><strong>Cím:</strong> 9200 Mosonmagyaróvár, Fő u. 17.</p>
+            <p><strong>E-mail:</strong> anitabrattengeier@gmail.com</p>
+            <p><strong>Telefon:</strong> +36 30 922 3271</p>
+            <p className="mt-2">Az adatkezelő az érintett adatait az Európai Parlament és a Tanács (EU) 2016/679 rendelete (GDPR) és az információs önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény (Infotv.) rendelkezéseinek megfelelően kezeli.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">2. Kezelt személyes adatok és célok</h2>
+            <p><strong>Időpontfoglalás és ügyfélnyilvántartás esetén:</strong> Név, telefonszám, e-mail cím, esetlegesen egészségügyi adat (allergia, bőrápolási szokások). Cél: időpont-egyeztetés, ügyfélkapcsolat, emlékeztető küldés. Jogalap: szerződés teljesítése (GDPR 6. cikk (1) b) pont).</p>
+            <p className="mt-2"><strong>Kapcsolatfelvételi üzenetek esetén:</strong> Név, e-mail cím, üzenet tartalma. Cél: az érdeklődő megkeresésének megválaszolása. Jogalap: az érintett hozzájárulása (GDPR 6. cikk (1) a) pont).</p>
+            <p className="mt-2"><strong>Hűségprogram esetén:</strong> Név, telefonszám, a felhasznált/megszerzett pontok. Cél: a hűségprogram működtetése. Jogalap: szerződés teljesítése.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">3. Az adatkezelés időtartama</h2>
+            <p>Az ügyfél személyes adatait az adatkezelő az üzleti kapcsolat megszűnésétől számított 5 évig, a számviteli adatokat az irányadó jogszabályi előírások szerint (általában 8 évig) tárolja. A hozzájárulás alapján kezelt adatokat a hozzájárulás visszavonásáig kezeli.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">4. Az érintett jogai</h2>
+            <p>Az érintett jogosult: hozzáférni személyes adataihoz; kérni azok helyesbítését; kérni azok törlését ("elfeledtetéshez való jog"); kérni az adatkezelés korlátozását; adathordozhatósághoz való jogát érvényesíteni; tiltakozni az adatkezelés ellen. Az érintett jogait az adatkezelő e-mail vagy postai úton kérheti érvényesíteni. Az adatkezelő a kérelmekre 30 napon belül válaszol. Jogorvoslati lehetőség: Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH), naih.hu, 1363 Budapest, Pf. 9.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">5. Adatbiztonság</h2>
+            <p>Az adatkezelő megfelelő technikai és szervezési intézkedéseket tesz a személyes adatok védelme érdekében. Az adatokat biztonságos szerveren tárolja, és harmadik félnek csak törvényi kötelezés esetén adja át. Az adatkezelő adatfeldolgozókat vehet igénybe (pl. e-mail szolgáltató), amelyekről kérésre tájékoztatást nyújt.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">6. Sütik (cookie-k)</h2>
+            <p>Weboldalunk sütik használatáról részletes tájékoztatást a <a href="/cookie" className="text-[#D4AF37] underline">Cookie Tájékoztatóban</a> talál.</p>
+          </section>
+        </div>
+      </div>
+      <footer className="bg-[#1A1A1A] text-white/40 text-center py-6 text-xs mt-12">
+        <p>© 2026 Anita Art of Beauty. Minden jog fenntartva.</p>
+      </footer>
+    </div>
+  );
+};
+
+// Cookie Tájékoztató Component
+const CookiePage = () => {
+  const navigate = useNavigate();
+  return (
+    <div className="min-h-screen bg-[#F9F7F2]">
+      <div className="bg-[#1A1A1A] py-4 px-6 flex items-center justify-between">
+        <button onClick={() => navigate('/')} className="text-white/70 hover:text-[#D4AF37] text-sm transition-colors flex items-center gap-2">
+          ← Vissza a főoldalra
+        </button>
+        <span className="text-white font-serif text-lg">ANITA | Art of Beauty</span>
+      </div>
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        <h1 className="font-serif text-4xl mb-2 text-[#1A1A1A]">Cookie (Süti) Tájékoztató</h1>
+        <p className="text-[#1A1A1A]/50 text-sm mb-10">Utoljára frissítve: 2026. január 1.</p>
+
+        <div className="space-y-8 text-[#1A1A1A]/80 leading-relaxed">
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">1. Mi az a cookie (süti)?</h2>
+            <p>A cookie (süti) egy kis szöveges fájl, amelyet a weboldal az Ön böngészőjében helyez el. A sütik segítenek a weboldal megfelelő működésében, javítják a felhasználói élményt, és lehetővé teszik a látogatási szokások elemzését.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">2. Általunk használt sütik típusai</h2>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse mt-2">
+                <thead>
+                  <tr className="bg-[#1A1A1A]/10">
+                    <th className="text-left p-3 font-sans text-sm">Süti neve</th>
+                    <th className="text-left p-3 font-sans text-sm">Típus</th>
+                    <th className="text-left p-3 font-sans text-sm">Cél</th>
+                    <th className="text-left p-3 font-sans text-sm">Lejárat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-[#1A1A1A]/10">
+                    <td className="p-3 text-sm">adminAuth</td>
+                    <td className="p-3 text-sm">Szükséges</td>
+                    <td className="p-3 text-sm">Admin bejelentkezés tárolása</td>
+                    <td className="p-3 text-sm">Munkamenet végéig</td>
+                  </tr>
+                  <tr className="border-t border-[#1A1A1A]/10">
+                    <td className="p-3 text-sm">_ga, _gid</td>
+                    <td className="p-3 text-sm">Analitikai</td>
+                    <td className="p-3 text-sm">Látogatói statisztikák (ha aktív)</td>
+                    <td className="p-3 text-sm">2 év / 24 óra</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">3. Szükséges (elengedhetetlen) sütik</h2>
+            <p>Ezek a sütik a weboldal alapvető működéséhez szükségesek, így azokat nem lehet visszautasítani. Személyes adatot nem tárolnak és nem azonosítják Önt.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">4. Hogyan kezelheti a sütiket?</h2>
+            <p>A legtöbb böngésző alapértelmezés szerint engedélyezi a sütik fogadását. Ön bármikor megváltoztathatja böngészőjének beállításait a sütik elutasítása vagy törlése érdekében. Kérjük, vegye figyelembe, hogy a sütik letiltása esetén előfordulhat, hogy a weboldal egyes funkciói nem működnek megfelelően.</p>
+            <p className="mt-2">A cookie-kezelés böngészőnkénti beállításairól a következő linkeken tájékozódhat: <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] underline">Chrome</a>, <a href="https://support.mozilla.org/hu/kb/sutik-informaciok-amelyeket-weboldalak-tarolnak" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] underline">Firefox</a>, <a href="https://support.apple.com/hu-hu/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] underline">Safari</a>.</p>
+          </section>
+
+          <section>
+            <h2 className="font-serif text-2xl text-[#1A1A1A] mb-3">5. Kapcsolat</h2>
+            <p>Ha kérdése van a cookie-kezeléssel kapcsolatban, kérjük, vegye fel velünk a kapcsolatot: <a href="mailto:anitabrattengeier@gmail.com" className="text-[#D4AF37] underline">anitabrattengeier@gmail.com</a></p>
+          </section>
+        </div>
+      </div>
+      <footer className="bg-[#1A1A1A] text-white/40 text-center py-6 text-xs mt-12">
+        <p>© 2026 Anita Art of Beauty. Minden jog fenntartva.</p>
+      </footer>
+    </div>
+  );
+};
+
 // Main Landing Page Component
 const LandingPage = () => {
   return (
@@ -1127,6 +1336,9 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                <Route path="/aszf" element={<ASZFPage />} />
+                <Route path="/adatvedelem" element={<GDPRPage />} />
+                <Route path="/cookie" element={<CookiePage />} />
       </Routes>
     </BrowserRouter>);
 

@@ -27,7 +27,7 @@ db = client[os.environ['DB_NAME']]
 resend.api_key = os.environ.get('RESEND_API_KEY', '')
 SENDER_EMAIL = os.environ.get('SENDER_EMAIL', 'onboarding@resend.dev')
 RECIPIENT_EMAIL = os.environ.get('RECIPIENT_EMAIL', 'anitabrattengeier@gmail.com')
-ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'AnitaBeauty2024')
+ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'AnitaBeauty2026')
 
 # Create the main app
 app = FastAPI(title="ANITA Art of Beauty API")
