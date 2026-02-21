@@ -7,9 +7,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Toaster, toast } from "sonner";
-import { Phone, Mail, MapPin, Instagram, Facebook, Menu, X, Clock, Award, Heart, Sparkles, Image, Trash2, Plus, Edit, LogOut, Save } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Menu, X, Clock, Award, Heart, Sparkes, Image, Trash2, Plus, Edit, LogOut, Save } from "lucide-react";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = process.env.REACT_APP_ACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 // Services data from A version price list
@@ -391,7 +391,7 @@ const GallerySection = () => {
   const fetchGalleryImages = async () => {
     try {
       const response = await axios.get(`${API}/gallery`);
-      setImages(response.data);
+      setImages(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       console.error("Error fetching gallery:", error);
     } finally {
@@ -871,8 +871,8 @@ const AdminDashboard = () => {
         axios.get(`${API}/gallery`),
         axios.get(`${API}/promotions/all`)
       ]);
-      setGalleryImages(galleryRes.data);
-      setPromotions(promosRes.data);
+      setGalleryImages(Array.isArray(galleryRes.data) ? galleryRes.data : []);
+      setPromotions(Array.isArray(promosRes.data) ? promosRes.data : []);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
