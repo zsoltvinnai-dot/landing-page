@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Toaster, toast } from "sonner";
 import { Phone, Mail, MapPin, Instagram, Facebook, Menu, X, Clock, Award, Heart, Sparkles, Image, Trash2, Plus, Edit, LogOut, Save } from "lucide-react";
-
+ // backend URL from env
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
