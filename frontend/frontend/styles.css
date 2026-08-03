@@ -1295,6 +1295,213 @@ h2 {
 .social-card strong { font-family: var(--display); font-size: clamp(1.4rem, 2.4vw, 2.2rem); font-weight: 400; }
 .social-card b { font-size: 1.4rem; font-weight: 400; }
 
+.location {
+  position: relative;
+  padding: 150px clamp(24px, 7vw, 130px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 86% 6%, rgba(215, 139, 171, 0.22), transparent 28%),
+    linear-gradient(145deg, #f8f1e8 0%, #efe2d2 100%);
+}
+
+.location::before {
+  content: "FŐ 17";
+  position: absolute;
+  right: -0.05em;
+  top: -0.12em;
+  color: rgba(11, 10, 8, 0.035);
+  font-family: var(--display);
+  font-size: clamp(8rem, 19vw, 22rem);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.location-heading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 8vw;
+  align-items: end;
+}
+
+.location-heading h2 { margin-bottom: 0; }
+.location-heading h2 em { color: var(--pink); }
+
+.location-address {
+  padding: 30px 0 5px;
+  display: grid;
+  gap: 17px;
+  border-top: 1px solid var(--ink);
+}
+
+.location-address > span {
+  color: #85786b;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.location-address strong {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.location-address a {
+  width: max-content;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--ink);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.location-address a b { margin-left: 9px; color: var(--pink); }
+
+.location-map {
+  position: relative;
+  min-height: 560px;
+  padding: 13px;
+  overflow: hidden;
+  border: 1px solid rgba(11, 10, 8, 0.22);
+  background: var(--ink);
+  box-shadow: 0 35px 90px rgba(62, 39, 26, 0.16);
+}
+
+.location-map iframe {
+  width: 100%;
+  height: 560px;
+  display: block;
+  border: 0;
+  filter: grayscale(0.88) sepia(0.15) contrast(1.06);
+}
+
+.map-orbit {
+  position: absolute;
+  right: 38px;
+  bottom: 38px;
+  width: 118px;
+  height: 118px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 50%;
+  background: rgba(11, 10, 8, 0.88);
+  color: var(--gold-light);
+  box-shadow: 0 15px 45px rgba(0,0,0,.28);
+}
+
+.map-orbit::before,
+.map-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 13px;
+  border: 1px solid rgba(215, 139, 171, 0.5);
+  border-radius: 50%;
+}
+
+.map-orbit::after { inset: -11px 30px; transform: rotate(55deg); }
+.map-orbit span { font-family: var(--display); font-size: 1rem; letter-spacing: 0.2em; }
+
+.parking-intro {
+  margin: 80px 0 32px;
+  display: grid;
+  grid-template-columns: 0.55fr 1.45fr;
+  gap: 7vw;
+  align-items: start;
+}
+
+.parking-intro > p:last-child {
+  max-width: 720px;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  line-height: 1.2;
+}
+
+.parking-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.parking-card {
+  min-height: 430px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(11, 10, 8, 0.22);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+
+.parking-card:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 28px 65px rgba(62, 39, 26, 0.15);
+}
+
+.parking-paid { background: rgba(255, 255, 255, 0.44); }
+.parking-free { background: var(--ink); color: var(--paper); }
+
+.parking-tag {
+  width: max-content;
+  padding: 8px 11px;
+  border: 1px solid currentColor;
+  border-radius: 99px;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.parking-card > div {
+  margin: 55px 0 28px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.parking-card > div b { color: var(--pink); font-size: 0.65rem; letter-spacing: 0.12em; }
+.parking-free > div b { color: var(--gold); }
+
+.parking-card strong {
+  font-family: var(--display);
+  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.parking-card p {
+  margin: 0 0 30px;
+  color: #75695d;
+  font-size: 0.79rem;
+  line-height: 1.75;
+}
+
+.parking-free p { color: rgba(255,255,255,.62); }
+.parking-card small { margin-top: auto; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+.parking-note {
+  margin-top: 14px;
+  padding: 25px 28px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 30px;
+  align-items: center;
+  border: 1px solid rgba(11, 10, 8, 0.22);
+  background: var(--gold);
+}
+
+.parking-note span,
+.parking-note a { font-size: 0.56rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.parking-note p { margin: 0; font-size: 0.7rem; line-height: 1.65; }
+.parking-note a { white-space: nowrap; border-bottom: 1px solid var(--ink); }
+
 .contact {
   position: relative;
   min-height: 100vh;
@@ -1453,6 +1660,9 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 0.58rem; 
   .package-grid { grid-template-columns: 1fr; }
   .package-card { min-height: 500px; }
   .social { grid-template-columns: 1fr; }
+  .location-heading { grid-template-columns: 1fr; gap: 40px; }
+  .parking-grid { grid-template-columns: 1fr 1fr; }
+  .parking-free { grid-column: span 2; }
 }
 
 @media (max-width: 760px) {
@@ -1484,7 +1694,8 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 0.58rem; 
   .pricing,
   .packages,
   .about,
-  .social { padding: 100px 24px; }
+  .social,
+  .location { padding: 100px 24px; }
   h2 { font-size: clamp(3.1rem, 15vw, 5.2rem); }
   .story-intro { margin-bottom: 50px; }
   .story-layout { display: block; }
@@ -1515,6 +1726,16 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 0.58rem; 
   .about-stamp { right: -7px; }
   .social-card { grid-template-columns: 72px 1fr auto; padding: 18px; gap: 14px; }
   .social-card img { width: 72px; height: 72px; }
+  .location-heading { margin-bottom: 45px; }
+  .location-map { min-height: 410px; padding: 8px; }
+  .location-map iframe { height: 410px; }
+  .map-orbit { right: 24px; bottom: 24px; width: 88px; height: 88px; }
+  .parking-intro { margin-top: 55px; grid-template-columns: 1fr; gap: 12px; }
+  .parking-grid { grid-template-columns: 1fr; }
+  .parking-free { grid-column: auto; }
+  .parking-card { min-height: 380px; }
+  .parking-note { grid-template-columns: 1fr; gap: 14px; }
+  .parking-note a { width: max-content; white-space: normal; }
   .contact { min-height: 850px; }
   .contact-ring { width: 130vw; }
   .contact-details { grid-template-columns: 1fr; }
