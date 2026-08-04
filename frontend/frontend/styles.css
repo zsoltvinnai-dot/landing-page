@@ -1415,6 +1415,7 @@ h2 {
 }
 
 .location-address a .link-arrow { color: inherit; }
+.location-address .route-link { padding-bottom: 0; border-bottom: 0; }
 
 .location-map {
   position: relative;
@@ -1704,7 +1705,6 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 0.58rem; 
 
 .floating-book:hover { transform: rotate(8deg) scale(1.06); }
 .floating-book span { font-size: 0.53rem; font-weight: 800; letter-spacing: 0.13em; }
-.floating-book b { position: absolute; right: 13px; top: 13px; font-weight: 400; }
 
 @media (max-width: 1050px) {
   .desktop-nav { display: none; }
@@ -1838,7 +1838,6 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 0.58rem; 
   footer > div { justify-self: center; }
   .floating-book { width: 70px; height: 70px; right: 16px; bottom: 16px; }
   .floating-book span { font-size: .46rem; }
-  .floating-book b { right: 12px; top: 9px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
