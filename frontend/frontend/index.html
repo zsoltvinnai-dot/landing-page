@@ -419,14 +419,17 @@
           </div>
         </div>
 
-        <div class="location-map reveal">
-          <iframe
-            title="Anita Art of Beauty – Fő utca 17., Mosonmagyaróvár"
-            src="https://www.google.com/maps?q=9200+Mosonmagyar%C3%B3v%C3%A1r,+F%C5%91+utca+17&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen
-          ></iframe>
+        <div class="location-map reveal" data-map-shell>
+          <div class="map-consent">
+            <p class="eyebrow">Adatbarát térkép</p>
+            <h3>Itt várunk<br /><em>Óvár szívében.</em></h3>
+            <p>A Google Térkép csak akkor töltődik be, ha kéred. A betöltéssel kapcsolat jön létre a Google szolgáltatásával.</p>
+            <div class="map-consent-actions">
+              <button class="button button-gold" type="button" data-load-map>Térkép betöltése</button>
+              <a href="https://www.google.com/maps/dir/?api=1&destination=9200+Mosonmagyaróvár+Fő+utca+17" target="_blank" rel="noreferrer">Megnyitás új lapon <span class="link-arrow" aria-hidden="true"></span></a>
+            </div>
+            <small>Részletek az <a href="adatkezeles.html#terkep">adatkezelési tájékoztatóban</a>.</small>
+          </div>
           <div class="map-orbit" aria-hidden="true"><span>ANITA</span></div>
         </div>
 
@@ -474,7 +477,7 @@
         <div class="faq-list">
           <details class="reveal">
             <summary>Hol található az Anita Art of Beauty?<span>+</span></summary>
-            <p>9200 Mosonmagyaróvár, Fő utca 17., a Serényi-kapu mellett. Az oldalon közvetlen útvonaltervező és beágyazott térkép is található.</p>
+            <p>9200 Mosonmagyaróvár, Fő utca 17., a Serényi-kapu mellett. Az oldalon közvetlen útvonaltervező és hozzájárulás után betölthető térkép található.</p>
           </details>
           <details class="reveal">
             <summary>Hol lehet parkolni a szalon közelében?<span>+</span></summary>
@@ -511,13 +514,13 @@
     <footer>
       <a class="wordmark footer-mark" href="#top" aria-label="Anita Art of Beauty – vissza az oldal tetejére"><img src="assets/anita-art-of-beauty-logo.jpg" alt="Anita Art of Beauty" width="507" height="283" /></a>
       <p>© <span id="year"></span> Brattengeier Anita. Minden jog fenntartva.</p>
-      <div><a href="#">Adatvédelem</a><a href="#">ÁSZF</a></div>
+      <div><a href="adatkezeles.html">Adatkezelési tájékoztató</a><a href="impresszum.html">Impresszum</a></div>
     </footer>
 
     <a class="floating-book" href="tel:+36309223271" aria-label="Időpontfoglalás telefonon">
       <span>FOGLALÁS</span>
     </a>
 
-    <script src="script.js?v=20260804"></script>
+    <script src="script.js?v=20260804-legal"></script>
   </body>
 </html>

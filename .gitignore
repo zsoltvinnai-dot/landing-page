@@ -75,6 +75,8 @@ agenthub/agents/youtube/db
 
 # Build caches
 .cache/
+/tmp/
+/output/
 
 # Mobile development
 android-sdk/ -e 
