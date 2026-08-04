@@ -198,6 +198,24 @@ priceTabs.forEach((tab) => {
 renderPrices("lash");
 loadSheetPrices();
 
+const mapShell = document.querySelector("[data-map-shell]");
+const mapLoadButton = document.querySelector("[data-load-map]");
+
+if (mapShell && mapLoadButton) {
+  mapLoadButton.addEventListener("click", () => {
+    const iframe = document.createElement("iframe");
+    iframe.title = "Anita Art of Beauty – Fő utca 17., Mosonmagyaróvár";
+    iframe.src = "https://www.google.com/maps?q=9200+Mosonmagyar%C3%B3v%C3%A1r,+F%C5%91+utca+17&output=embed";
+    iframe.loading = "lazy";
+    iframe.referrerPolicy = "no-referrer-when-downgrade";
+    iframe.allowFullscreen = true;
+
+    mapShell.querySelector(".map-consent")?.remove();
+    mapShell.prepend(iframe);
+    mapShell.classList.add("is-loaded");
+  }, { once: true });
+}
+
 const header = document.querySelector("[data-header]");
 window.addEventListener("scroll", () => header.classList.toggle("is-scrolled", window.scrollY > 32), { passive: true });
 
