@@ -1,4 +1,4 @@
-const prices = {
+let prices = {
   lash: [
     { name: "1D Classic — új szett", meta: "természetes, finom hatás · 120–150 perc", price: "19 900 Ft" },
     { name: "1D Classic — töltés", meta: "3 héten belül · min. 40% megtartással", price: "14 900 Ft" },
@@ -45,19 +45,139 @@ const prices = {
   ]
 };
 
+const SHEET_PRICE_URL = "/api/prices";
+const allowedCategories = new Set(["lash", "brow", "makeup", "creative", "skin", "package"]);
+
+function parseCsv(csv) {
+  const rows = [];
+  let row = [];
+  let value = "";
+  let quoted = false;
+
+  for (let index = 0; index < csv.length; index += 1) {
+    const character = csv[index];
+    const next = csv[index + 1];
+
+    if (character === '"' && quoted && next === '"') {
+      value += '"';
+      index += 1;
+    } else if (character === '"') {
+      quoted = !quoted;
+    } else if (character === "," && !quoted) {
+      row.push(value);
+      value = "";
+    } else if ((character === "\n" || character === "\r") && !quoted) {
+      if (character === "\r" && next === "\n") index += 1;
+      row.push(value);
+      if (row.some((cell) => cell.trim() !== "")) rows.push(row);
+      row = [];
+      value = "";
+    } else {
+      value += character;
+    }
+  }
+
+  row.push(value);
+  if (row.some((cell) => cell.trim() !== "")) rows.push(row);
+  return rows;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function normalizePrice(price, suffix = "") {
+  const normalized = String(price).replace(/\s+/g, " ").trim();
+  if (!normalized) return "Egyedi ajánlat";
+  const formatted = /^\d+$/.test(normalized)
+    ? `${new Intl.NumberFormat("hu-HU").format(Number(normalized))} Ft`
+    : normalized;
+  const cleanSuffix = String(suffix).trim();
+  return `${formatted}${cleanSuffix.startsWith("/") ? " " : ""}${cleanSuffix}`;
+}
+
+function syncPackages(packageItems) {
+  if (!packageItems.length) return;
+  const cards = [...document.querySelectorAll(".package-card")].sort(
+    (a, b) => Number(a.dataset.packageOrder) - Number(b.dataset.packageOrder)
+  );
+
+  cards.forEach((card, index) => {
+    const item = packageItems[index];
+    card.hidden = !item;
+    if (!item) return;
+    card.querySelector(".package-name").textContent = item.name;
+    card.querySelector(".package-description").textContent = item.meta;
+    card.querySelector(".package-price strong").textContent = item.price;
+    const formerPrice = card.querySelector(".package-price del");
+    if (formerPrice) formerPrice.hidden = true;
+  });
+}
+
+async function loadSheetPrices() {
+  const status = document.querySelector("#price-sync-status");
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), 8000);
+
+  try {
+    const response = await fetch(SHEET_PRICE_URL, { cache: "no-store", signal: controller.signal });
+    if (!response.ok) throw new Error(`Árlista HTTP ${response.status}`);
+
+    const rows = parseCsv(await response.text()).slice(1);
+    const grouped = {};
+
+    rows.forEach((columns) => {
+      const [rawCategory, , rawName, rawMeta, rawPrice, rawSuffix, rawActive, rawOrder] = columns;
+      const category = String(rawCategory || "").trim().toLowerCase();
+      const active = ["TRUE", "IGAZ", "1", "YES"].includes(String(rawActive || "").trim().toUpperCase());
+
+      if (!active || !allowedCategories.has(category) || !String(rawName || "").trim()) return;
+      grouped[category] ??= [];
+      grouped[category].push({
+        name: String(rawName).trim(),
+        meta: String(rawMeta || "").trim(),
+        price: normalizePrice(rawPrice, rawSuffix),
+        order: Number(rawOrder) || 999,
+      });
+    });
+
+    Object.values(grouped).forEach((items) => items.sort((a, b) => a.order - b.order));
+    Object.entries(grouped).forEach(([category, items]) => {
+      if (category !== "package" && items.length) prices[category] = items;
+    });
+
+    syncPackages(grouped.package || []);
+    const activeTab = document.querySelector(".price-tab.is-active");
+    renderPrices(activeTab?.dataset.category || "lash");
+    status.textContent = "Élő árlista · Google Táblázatból frissítve";
+    status.classList.add("is-synced");
+  } catch (error) {
+    console.warn("Az élő árlista nem tölthető be, a mentett változat látható.", error);
+    status.textContent = "A legutóbbi mentett árlista látható";
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
+}
+
 const priceList = document.querySelector("#price-list");
 const priceTabs = [...document.querySelectorAll(".price-tab")];
 
 function renderPrices(category) {
-  priceList.innerHTML = prices[category]
+  const categoryPrices = prices[category] || [];
+  priceList.innerHTML = categoryPrices
     .map(
       (item, index) => `
         <article class="price-row" style="animation-delay:${index * 45}ms">
           <div>
-            <h3>${item.name}</h3>
-            <p>${item.meta}</p>
+            <h3>${escapeHtml(item.name)}</h3>
+            <p>${escapeHtml(item.meta)}</p>
           </div>
-          <strong>${item.price}</strong>
+          <strong>${escapeHtml(item.price)}</strong>
         </article>`
     )
     .join("");
@@ -76,6 +196,7 @@ priceTabs.forEach((tab) => {
 });
 
 renderPrices("lash");
+loadSheetPrices();
 
 const header = document.querySelector("[data-header]");
 window.addEventListener("scroll", () => header.classList.toggle("is-scrolled", window.scrollY > 32), { passive: true });

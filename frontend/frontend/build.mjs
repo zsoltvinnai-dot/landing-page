@@ -4,7 +4,7 @@ const output = new URL("./build/", import.meta.url);
 
 mkdirSync(output, { recursive: true });
 
-for (const file of ["index.html", "styles.css", "script.js"]) {
+for (const file of ["index.html", "styles.css", "script.js", "robots.txt", "sitemap.xml"]) {
   cpSync(new URL(`./${file}`, import.meta.url), new URL(file, output));
 }
 
