@@ -154,11 +154,13 @@ async function loadSheetPrices() {
     syncPackages(grouped.package || []);
     const activeTab = document.querySelector(".price-tab.is-active");
     renderPrices(activeTab?.dataset.category || "lash");
-    status.textContent = "Élő árlista · Google Táblázatból frissítve";
-    status.classList.add("is-synced");
+    if (status) {
+      status.textContent = "Élő árlista · Google Táblázatból frissítve";
+      status.classList.add("is-synced");
+    }
   } catch (error) {
     console.warn("Az élő árlista nem tölthető be, a mentett változat látható.", error);
-    status.textContent = "A legutóbbi mentett árlista látható";
+    if (status) status.textContent = "A legutóbbi mentett árlista látható";
   } finally {
     window.clearTimeout(timeoutId);
   }
