@@ -1293,6 +1293,221 @@ h2 {
   text-transform: uppercase;
 }
 
+.chogan {
+  position: relative;
+  padding: 150px clamp(24px, 7vw, 130px) 0;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+  gap: clamp(60px, 9vw, 150px);
+  overflow: hidden;
+  color: var(--paper);
+  background:
+    radial-gradient(circle at 78% 30%, rgba(217, 174, 75, .15), transparent 30%),
+    radial-gradient(circle at 8% 90%, rgba(215, 139, 171, .13), transparent 28%),
+    var(--ink);
+}
+
+.chogan::before {
+  content: "SCENT";
+  position: absolute;
+  right: -.04em;
+  bottom: 140px;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, .045);
+  font-family: var(--display);
+  font-size: clamp(9rem, 24vw, 28rem);
+  line-height: .72;
+  pointer-events: none;
+}
+
+.chogan-copy {
+  position: relative;
+  z-index: 3;
+  align-self: center;
+  padding-bottom: 120px;
+}
+
+.chogan .eyebrow { color: var(--gold-light); }
+.chogan h2 { margin-bottom: 34px; font-size: clamp(4rem, 7.4vw, 8.5rem); }
+.chogan h2 em { color: var(--pink); }
+
+.chogan-lead {
+  max-width: 640px;
+  margin-bottom: 38px;
+  color: rgba(255, 253, 250, .66);
+  font-size: clamp(.95rem, 1.15vw, 1.08rem);
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.chogan-actions {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.chogan-actions .text-link { color: var(--paper); }
+
+.chogan-note {
+  margin: 28px 0 0;
+  color: rgba(255, 253, 250, .42);
+  font-size: .62rem;
+  letter-spacing: .08em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.chogan-scene {
+  position: relative;
+  z-index: 2;
+  min-height: 680px;
+  align-self: end;
+  perspective: 1200px;
+}
+
+.scent-orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 50%;
+  transform: rotateX(68deg) rotateZ(-16deg);
+}
+
+.scent-orbit-one { inset: 16% -5% 8% 7%; }
+.scent-orbit-two { inset: 25% 4% 18% 18%; border-color: rgba(217, 174, 75, .19); }
+
+.perfume-bottle {
+  position: absolute;
+  bottom: 8%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 24px 24px 42px 42px;
+  background:
+    linear-gradient(105deg, rgba(255, 255, 255, .2), transparent 22% 72%, rgba(255, 255, 255, .1)),
+    linear-gradient(180deg, rgba(217, 174, 75, .2), rgba(215, 139, 171, .08));
+  box-shadow: inset 0 0 40px rgba(255, 255, 255, .07), 0 35px 90px rgba(0, 0, 0, .42);
+  transform-style: preserve-3d;
+}
+
+.perfume-bottle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -82px;
+  width: 42%;
+  height: 74px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 8px 8px 3px 3px;
+  background: linear-gradient(90deg, #9c7928, var(--gold-light), #76520e);
+  transform: translateX(-50%);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, .3);
+}
+
+.perfume-bottle::after {
+  content: "";
+  position: absolute;
+  inset: 40% 15% 18%;
+  border: 1px solid rgba(217, 174, 75, .45);
+  background: rgba(11, 10, 8, .58);
+}
+
+.perfume-bottle span,
+.perfume-bottle b {
+  position: relative;
+  z-index: 2;
+  color: var(--gold-light);
+  font-family: var(--display);
+  font-size: clamp(.72rem, 1vw, .95rem);
+  font-weight: 400;
+  letter-spacing: .22em;
+}
+
+.perfume-bottle b {
+  position: absolute;
+  bottom: 25%;
+  color: rgba(255, 255, 255, .48);
+  font-family: var(--body);
+  font-size: .48rem;
+  letter-spacing: .28em;
+}
+
+.perfume-bottle-main {
+  left: 34%;
+  width: 250px;
+  height: 390px;
+  transform: rotateY(-8deg) translateZ(42px);
+}
+
+.perfume-bottle-back {
+  left: 5%;
+  width: 185px;
+  height: 300px;
+  opacity: .48;
+  transform: rotateY(18deg) translateZ(-80px);
+}
+
+.perfume-bottle-side {
+  right: 2%;
+  width: 170px;
+  height: 270px;
+  opacity: .64;
+  transform: rotateY(-22deg) translateZ(-45px);
+}
+
+.scent-card {
+  position: absolute;
+  z-index: 4;
+  min-width: 145px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, .13);
+  background: rgba(11, 10, 8, .68);
+  backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, .68);
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .24);
+}
+
+.scent-card span { margin-right: 10px; color: var(--pink); }
+.scent-card-top { right: 2%; top: 19%; }
+.scent-card-middle { left: 2%; top: 42%; }
+.scent-card-bottom { right: 4%; bottom: 12%; }
+
+.chogan-services {
+  position: relative;
+  z-index: 3;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgba(255, 255, 255, .14);
+}
+
+.chogan-services article {
+  min-height: 250px;
+  padding: 38px 30px 50px;
+  border-right: 1px solid rgba(255, 255, 255, .14);
+}
+
+.chogan-services article:last-child { border-right: 0; }
+.chogan-services article > span { color: var(--gold); font-size: .58rem; font-weight: 700; letter-spacing: .16em; }
+
+.chogan-services h3 {
+  margin: 34px 0 15px;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.2vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+
+.chogan-services p {
+  margin: 0;
+  color: rgba(255, 253, 250, .5);
+  font-size: .82rem;
+  line-height: 1.75;
+}
+
 .social {
   padding: 140px clamp(24px, 7vw, 130px);
   display: grid;
@@ -1796,6 +2011,14 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 0.58rem; 
   .story-layout { grid-template-columns: 0.8fr 1.2fr; gap: 40px; }
   .package-grid { grid-template-columns: 1fr; }
   .package-card { min-height: 500px; }
+  .chogan { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .chogan-scene { min-height: 600px; }
+  .perfume-bottle-main { left: 28%; width: 210px; height: 350px; }
+  .perfume-bottle-back { width: 155px; height: 260px; }
+  .perfume-bottle-side { width: 145px; height: 240px; }
+  .chogan-services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .chogan-services article:nth-child(2) { border-right: 0; }
+  .chogan-services article:nth-child(-n+2) { border-bottom: 1px solid rgba(255, 255, 255, .14); }
   .social { grid-template-columns: 1fr; }
   .location-heading { grid-template-columns: 1fr; gap: 40px; }
   .parking-grid { grid-template-columns: 1fr 1fr; }
@@ -1831,6 +2054,7 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 0.58rem; 
   .pricing,
   .packages,
   .about,
+  .chogan,
   .social,
   .location,
   .faq { padding: 100px 24px; }
@@ -1862,6 +2086,26 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 0.58rem; 
   .about { grid-template-columns: 1fr; }
   .about-photo { height: 580px; border-radius: 190px 190px 16px 16px; }
   .about-stamp { right: -7px; }
+  .chogan {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .chogan-copy { padding-bottom: 50px; }
+  .chogan h2 { font-size: clamp(3.1rem, 15vw, 5.2rem); }
+  .chogan-actions { align-items: flex-start; flex-direction: column; gap: 24px; }
+  .chogan-scene { min-height: 550px; }
+  .perfume-bottle-main { left: 50%; width: 190px; height: 310px; transform: translateX(-50%) rotateY(-8deg) translateZ(42px); }
+  .perfume-bottle-back { left: 0; width: 130px; height: 220px; }
+  .perfume-bottle-side { right: 0; width: 125px; height: 210px; }
+  .perfume-bottle::before { top: -58px; height: 52px; }
+  .scent-card { min-width: 122px; padding: 12px 14px; font-size: .5rem; }
+  .chogan-services { margin: 0 -24px; grid-template-columns: 1fr; }
+  .chogan-services article { min-height: auto; padding: 35px 24px; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, .14); }
+  .chogan-services article:nth-child(2) { border-right: 0; }
+  .chogan-services article:last-child { border-bottom: 0; }
+  .chogan-services h3 { margin-top: 20px; }
   .social-card { grid-template-columns: 72px 1fr auto; padding: 18px; gap: 14px; }
   .social-card img { width: 72px; height: 72px; }
   .location-heading { margin-bottom: 45px; }
