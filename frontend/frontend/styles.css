@@ -2025,7 +2025,7 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 0.58rem; 
   .work-card span { padding: 46px 16px 16px; transform: none; }
   .work-card::after { top: 12px; right: 12px; opacity: 1; transform: none; }
   .section-heading { grid-template-columns: 1fr; gap: 20px; }
-  .pricing-note { max-width: 380px; }
+  .pricing-note { display: none; }
   .price-tabs { margin: 48px 0 40px; }
   .price-stage { grid-template-columns: 1fr; }
   .price-orb { width: 64vw; max-width: 290px; justify-self: center; margin-bottom: 20px; }
