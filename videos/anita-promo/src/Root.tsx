@@ -3,8 +3,10 @@ import { Composition, Folder, staticFile } from "remotion";
 import { AnitaPromo } from "./AnitaPromo";
 import { CosmeticsScene } from "./CosmeticsScene";
 import { IntroScene } from "./IntroScene";
+import { OpeningOutro } from "./OpeningOutro";
 import { OutroScene } from "./OutroScene";
 import { PhotoScene } from "./PhotoScene";
+import { SzalonKeszul } from "./SzalonKeszul";
 import { colors } from "./theme";
 
 // Vertical 9:16 for Instagram Reels, TikTok and Facebook Stories
@@ -51,6 +53,14 @@ export const RemotionRoot: React.FC = () => {
           fps={30}
           durationInFrames={135}
         />
+        <Composition
+          id="Nyitas"
+          component={OpeningOutro}
+          width={1080}
+          height={1920}
+          fps={30}
+          durationInFrames={105}
+        />
       </Folder>
       <Composition
         id="AnitaPromo"
@@ -59,6 +69,14 @@ export const RemotionRoot: React.FC = () => {
         height={1920}
         fps={30}
         durationInFrames={435}
+      />
+      <Composition
+        id="SzalonKeszul"
+        component={SzalonKeszul}
+        width={1080}
+        height={1920}
+        fps={30}
+        durationInFrames={375}
       />
     </>
   );
