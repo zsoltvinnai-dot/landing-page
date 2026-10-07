@@ -35,6 +35,7 @@ export const RemotionRoot: React.FC = () => {
             title: "Hangsúlyos tekintet",
             subtitle: "Klasszikus, volume, lifting",
             accentColor: colors.gold,
+            shade: 1,
           }}
         />
         <Composition

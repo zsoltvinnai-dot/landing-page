@@ -17,6 +17,7 @@ type PhotoSceneProps = {
   readonly title: string;
   readonly subtitle: string;
   readonly accentColor: string;
+  readonly shade: number;
   readonly style?: React.CSSProperties;
 };
 
@@ -26,6 +27,7 @@ const PhotoSceneInner: React.FC<PhotoSceneProps> = ({
   title,
   subtitle,
   accentColor,
+  shade,
   style,
 }) => {
   const frame = useCurrentFrame();
@@ -52,7 +54,7 @@ const PhotoSceneInner: React.FC<PhotoSceneProps> = ({
       <AbsoluteFill
         style={{
           background:
-            "linear-gradient(180deg, rgba(11,10,8,0) 45%, rgba(11,10,8,0.85) 75%, rgba(11,10,8,0.95) 100%)",
+            `linear-gradient(180deg, rgba(11,10,8,0) 45%, rgba(11,10,8,${0.85 * shade}) 75%, rgba(11,10,8,${0.95 * shade}) 100%)`,
         }}
       />
       <AbsoluteFill
@@ -135,6 +137,15 @@ const photoSceneSchema = {
     type: "color",
     default: colors.gold,
     description: "Accent color",
+  },
+  shade: {
+    type: "number",
+    default: 1,
+    min: 0,
+    max: 1,
+    step: 0.05,
+    description: "Text shade strength",
+    hiddenFromList: false,
   },
 } as const satisfies InteractivitySchema;
 

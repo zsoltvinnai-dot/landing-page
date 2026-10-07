@@ -26,6 +26,7 @@ export const AnitaPromo: React.FC = () => {
           title="Hangsúlyos tekintet"
           subtitle="Klasszikus, volume, lifting"
           accentColor={colors.gold}
+          shade={1}
         />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
@@ -39,6 +40,7 @@ export const AnitaPromo: React.FC = () => {
           title="Minden alkalomra"
           subtitle="Nappali, alkalmi, menyasszonyi"
           accentColor={colors.pink}
+          shade={1}
         />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition

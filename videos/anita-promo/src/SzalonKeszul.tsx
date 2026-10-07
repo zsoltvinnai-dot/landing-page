@@ -18,6 +18,7 @@ export const SzalonKeszul: React.FC = () => {
           title="Így kezdtük…"
           subtitle="Fő utca 17., Mosonmagyaróvár"
           accentColor={colors.gold}
+          shade={0.6}
         />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
@@ -31,6 +32,7 @@ export const SzalonKeszul: React.FC = () => {
           title="Új tervek"
           subtitle="Kiürült, kitisztult"
           accentColor={colors.gold}
+          shade={1}
         />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
@@ -44,6 +46,7 @@ export const SzalonKeszul: React.FC = () => {
           title="Lépésről lépésre"
           subtitle="Kezelőágy, lámpák, paravánok"
           accentColor={colors.gold}
+          shade={1}
         />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
@@ -57,6 +60,7 @@ export const SzalonKeszul: React.FC = () => {
           title="Új színt kapott"
           subtitle="Meleg krém falak, boltíves mennyezet"
           accentColor={colors.gold}
+          shade={1}
         />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
@@ -70,6 +74,7 @@ export const SzalonKeszul: React.FC = () => {
           title="Már csak a berendezés…"
           subtitle="Készül az új szalon"
           accentColor={colors.pink}
+          shade={1}
         />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition
