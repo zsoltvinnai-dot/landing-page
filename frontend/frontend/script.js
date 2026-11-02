@@ -35,13 +35,13 @@ let prices = {
     { name: "Relax arcmasszázs", meta: "arc + nyak + dekoltázs · 45 perc", price: "9 900 Ft" }
   ],
   skin: [
-    { name: "Hydro Glow", meta: "tervezett induló protokoll · 60 perc", price: "18 900 Ft" },
+    { name: "Hydro Glow", meta: "alap protokoll · 60 perc", price: "18 900 Ft" },
     { name: "Calm & Restore", meta: "érzékeny, vízhiányos bőrre · 60 perc", price: "19 900 Ft" },
     { name: "RF Lift", meta: "rádiófrekvenciás feszesítés · 60 perc", price: "21 900 Ft" },
     { name: "Deep Clean Ritual", meta: "személyre szabott mélytisztítás · 90 perc", price: "24 900 Ft" },
     { name: "Complex Skin Reset", meta: "gépi és manuális protokoll · 90 perc", price: "27 900 Ft" },
     { name: "Golden Age Premium", meta: "anti-aging luxusritus · 105 perc", price: "36 900 Ft" },
-    { name: "Face Lifting masszázs", meta: "tervezett arc + nyak + dekoltázs kezelés · 60 perc", price: "14 900 Ft" }
+    { name: "Face Lifting masszázs", meta: "arc + nyak + dekoltázs kezelés · 60 perc", price: "14 900 Ft" }
   ]
 };
 
