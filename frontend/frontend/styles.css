@@ -113,8 +113,8 @@ img {
 }
 
 .wordmark img {
-  width: 142px;
-  height: 58px;
+  width: 168px;
+  height: 56px;
   display: block;
   object-fit: contain;
   object-position: left center;
@@ -1978,7 +1978,7 @@ footer > div { justify-self: end; display: flex; gap: 24px; font-size: 0.58rem; 
 @media (max-width: 760px) {
   .site-header { height: 72px; padding: 0 18px; }
   .nav-cta { display: none; }
-  .wordmark img { width: 118px; height: 50px; }
+  .wordmark img { width: 150px; height: 50px; }
   .site-header { grid-template-columns: 1fr auto; }
   .hero {
     min-height: 980px;
