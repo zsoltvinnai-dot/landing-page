@@ -465,6 +465,7 @@ function renderResult(){
       <pre class="sb-text" id="sbtext"></pre>
       <a class="cta" id="msgrgo" href="https://m.me/AnitaLashandMakeUpMovar" target="_blank" rel="noopener">Messenger megnyitása ↗</a>
     </div>
+    <a class="cta ghost" id="wa" href="https://wa.me/36309223271" target="_blank" rel="noopener">WhatsAppon küldöm (magától beíródik)</a>
     <a class="cta ghost" id="sms" href="sms:+36309223271">SMS-ben küldöm (magától beíródik)</a>
     <a class="cta ghost" href="tel:+36309223271">Illatpróbát kérek · +36 30 922 3271</a>
     <button class="cta ghost" id="again">Újrakezdés</button>
@@ -479,6 +480,7 @@ function renderResult(){
   const go = document.getElementById('msgrgo'); go.href = go.href.split('?')[0] + '?text=' + enc;
   const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
   document.getElementById('sms').href = 'sms:+36309223271' + (ios ? '&' : '?') + 'body=' + enc;
+  document.getElementById('wa').href = 'https://wa.me/36309223271?text=' + enc;
   document.getElementById('sbtext').textContent = txt;
   document.getElementById('copy').onclick = () => {
     const box = document.getElementById('sendbox'), ok = box.querySelector('.sb-ok');
