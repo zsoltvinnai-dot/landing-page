@@ -344,9 +344,9 @@ function famSummary(P){
 /* ===== Képek: Chogan fotó, ha betölthető; különben rajzolt flakon ===== */
 function hookImages(){
   app.querySelectorAll('.ph img').forEach(img => {
-    const ok = () => { if (img.naturalWidth > 0) img.classList.add('ok'); };
-    if (img.complete) { img.naturalWidth > 0 ? ok() : img.remove(); return; }
+    const ok = () => { if (img.naturalWidth > 0) img.classList.add('ok'); else img.remove(); };
     img.addEventListener('load', ok); img.addEventListener('error', () => img.remove());
+    if (img.complete && img.naturalWidth > 0) ok();
   });
 }
 
@@ -417,7 +417,7 @@ function cardHTML(r, P, kind, idx){
   const fmts = fm.length ? fm : [`${p.s||''} ${p.pr||''}`.trim()];
   return `<article class="pcard ${kind==='hero'?'hero-card':'mini'}" id="c-${uid}">
    <div class="match"><b>${r.pct}%</b><small>egyezés</small></div>
-   <div class="phead"><div class="ph">${bottleSVG(p, uid)}${p.img?`<img src="${esc(p.img)}" alt="${esc(nm)}" loading="lazy">`:''}</div>
+   <div class="phead"><div class="ph">${bottleSVG(p, uid)}${p.img?`<img src="${esc(p.img)}" alt="${esc(nm)}" decoding="async">`:''}</div>
     <div><div class="code">${esc(p.c)}</div><div class="pname">${esc(nm)}</div>
      <div class="tags"><span class="tag">${gtag}</span><span class="tag ${p.l==='Luxury'?'lux':''}">${p.l}</span><span class="tag">${['','könnyed','közepes','testes'][p.i]}</span></div></div></div>
    <div class="pbody">
