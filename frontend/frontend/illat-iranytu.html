@@ -149,6 +149,10 @@ h1 em,h2 em{font-style:italic; color:var(--pink)}
 .pro .codes span small{font-family:var(--body); font-size:11px; color:var(--muted); margin-left:5px}
 .pro .codes span{font-variant-numeric:lining-nums}
 .actions{display:grid; gap:10px; margin-top:24px}
+.sendbox{border:1px solid rgba(217,174,75,.45); border-radius:4px; padding:16px; background:rgba(217,174,75,.06); display:grid; gap:12px}
+.sendbox[hidden]{display:none}
+.sb-ok{font-size:14px; color:var(--cream)}
+.sb-text{white-space:pre-wrap; font:13px/1.55 var(--body); color:var(--muted); background:rgba(0,0,0,.3); border-radius:3px; padding:10px 12px; user-select:text; -webkit-user-select:text}
 .copied{font-size:13px; color:var(--gold-light); text-align:center; min-height:18px}
 textarea.cp{width:100%; height:140px; margin-top:8px; background:rgba(0,0,0,.35); color:var(--cream); border:1px solid var(--faint); border-radius:3px; padding:10px; font:13px var(--body)}
 .note{font-size:12px; color:var(--muted); margin-top:24px; text-align:center; line-height:1.6}
@@ -455,8 +459,13 @@ function renderResult(){
     <div class="codes">${R.slice(0,8).map(r=>`<span>${esc(r.p.c)}<small>${r.pct}%</small></span>`).join('')}</div></div>`
    : `<div class="empty">Ezzel a szűréssel nincs találat. Válaszd a „Mind” lehetőséget.</div>`}
    <div class="actions">
-    <a class="cta" id="copy" href="https://m.me/AnitaLashandMakeUpMovar" target="_blank" rel="noopener">Elküldöm Anitának Messengerben</a>
-    <div class="copied" id="copied"></div>
+    <button class="cta" id="copy">Elküldöm Anitának Messengerben</button>
+    <div class="sendbox" id="sendbox" hidden>
+      <p class="sb-ok"><b>Kimásoltuk az eredményed.</b> Ha a Messengerben nem jelenik meg magától, nyomj hosszan az üzenetmezőre, és válaszd a <b>Beillesztés</b> lehetőséget.</p>
+      <pre class="sb-text" id="sbtext"></pre>
+      <a class="cta" id="msgrgo" href="https://m.me/AnitaLashandMakeUpMovar" target="_blank" rel="noopener">Messenger megnyitása ↗</a>
+    </div>
+    <a class="cta ghost" id="sms" href="sms:+36309223271">SMS-ben küldöm (magától beíródik)</a>
     <a class="cta ghost" href="tel:+36309223271">Illatpróbát kérek · +36 30 922 3271</a>
     <button class="cta ghost" id="again">Újrakezdés</button>
    </div>
@@ -466,11 +475,16 @@ function renderResult(){
   app.querySelectorAll('.filters button').forEach(b => b.onclick = () => { lineFilter = b.dataset.f; renderResult(); });
   app.querySelectorAll('.more').forEach(b => b.onclick = () => { const c = document.getElementById(b.dataset.t); c.classList.toggle('open'); b.textContent = c.classList.contains('open') ? 'Bezárás ▴' : 'Részletek ▾'; });
   document.getElementById('again').onclick = () => { A = Q.map(q => q.type==='multi' ? [] : null); step = -1; lineFilter='all'; unisex=true; render(); };
+  const txt = resultText(P, R), enc = encodeURIComponent(txt);
+  const go = document.getElementById('msgrgo'); go.href = go.href.split('?')[0] + '?text=' + enc;
+  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
+  document.getElementById('sms').href = 'sms:+36309223271' + (ios ? '&' : '?') + 'body=' + enc;
+  document.getElementById('sbtext').textContent = txt;
   document.getElementById('copy').onclick = () => {
-    const txt = resultText(P, R), out = document.getElementById('copied');
-    const fallback = () => { out.innerHTML = 'Másold ki, és illeszd be az üzenetbe:<textarea class="cp" readonly>' + esc(txt) + '</textarea>'; };
-    try { navigator.clipboard.writeText(txt).then(() => { out.textContent = 'Az eredményed a vágólapon van: illeszd be az üzenetbe.'; }, fallback); }
-    catch(e){ fallback(); }
+    const box = document.getElementById('sendbox'), ok = box.querySelector('.sb-ok');
+    box.hidden = false; box.scrollIntoView({behavior:'smooth', block:'center'});
+    const fail = () => { ok.innerHTML = '<b>Másold ki a lenti szöveget</b> (nyomj rá hosszan), majd a Messengerben illeszd be az üzenetmezőbe.'; };
+    try { navigator.clipboard.writeText(txt).catch(fail); } catch(e){ fail(); }
   };
 }
 function render(){
